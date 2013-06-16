@@ -17,5 +17,4 @@ public class Warmup1
     {
         return n > 21 ? 2 * (n - 21) : 21 - n;
     }
-
 }
