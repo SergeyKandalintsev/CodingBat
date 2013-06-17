@@ -206,11 +206,6 @@ public class Logic1
      */
     public static boolean more20( int n )
     {
-        if ( n == 0 )
-        {
-            return false;
-        }
-
-        return ( ( n - 1 ) % 20 == 0 || ( n - 2 ) % 20 == 0 );
+        return n != 0 && ( ( n - 1 ) % 20 == 0 || ( n - 2 ) % 20 == 0 );
     }
 }
