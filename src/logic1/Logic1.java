@@ -76,9 +76,9 @@ public class Logic1
      * between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your
      * birthday -- on that day, your speed can be 5 higher in all cases.
      * <ul>
-     * <li>caughtSpeeding(60, false) → 0</li>
-     * <li>caughtSpeeding(65, false) → 1</li>
-     * <li>caughtSpeeding(65, true) → 0true</li>
+     * <li>caughtSpeeding(60, false) --> 0</li>
+     * <li>caughtSpeeding(65, false) --> 1</li>
+     * <li>caughtSpeeding(65, true) --> 0true</li>
      * </ul>
      * @param speed
      * @param isBirthday
@@ -105,9 +105,9 @@ public class Logic1
      * Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are forbidden, so in
      * that case just return 20.
      * <ul>
-     * <li>sortaSum(3, 4) → 7</li>
-     * <li>sortaSum(9, 4) → 20</li>
-     * <li>sortaSum(10, 11) → 21</li>
+     * <li>sortaSum(3, 4) --> 7</li>
+     * <li>sortaSum(9, 4) --> 20</li>
+     * <li>sortaSum(10, 11) --> 21</li>
      * </ul>
      * @param a number
      * @param b number
@@ -143,9 +143,9 @@ public class Logic1
      * The number 6 is a truly great number. Given two int values, a and b, return true if either one is 6. Or if
      * their sum or difference is 6. Note: the function Math.abs(num) computes the absolute value of a number.
      * <ul>
-     * <li>love6(6, 4) → true</li>
-     * <li>love6(4, 5) → false</li>
-     * <li>love6(1, 5) → true</li>
+     * <li>love6(6, 4) --> true</li>
+     * <li>love6(4, 5) --> false</li>
+     * <li>love6(1, 5) --> true</li>
      * </ul>
      * @param a number
      * @param b number
@@ -161,9 +161,9 @@ public class Logic1
      * Given a number n, return true if n is in the range 1..10, inclusive. Unless "outsideMode" is true, in which case
      * return true if the number is less or equal to 1, or greater or equal to 10.
      * <ul>
-     * <li>in1To10(5, false) → true</li>
-     * <li>in1To10(11, false) → false</li>
-     * <li>in1To10(11, true) → true</li>
+     * <li>in1To10(5, false) --> true</li>
+     * <li>in1To10(11, false) --> false</li>
+     * <li>in1To10(11, true) --> true</li>
      * </ul>
      * @param n           number
      * @param outsideMode if <code>false</code> then outside mode is [1..10],  otherwise outside mode is ]1..10[
@@ -180,16 +180,37 @@ public class Logic1
      * We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11.
      * Return true if the given non-negative number is special. Use the % "mod" operator.
      * <ul>
-     * <li>specialEleven(22) → true</li>
-     * <li>specialEleven(23) → true</li>
-     * <li>specialEleven(24) → false</li>
+     * <li>specialEleven(22) --> true</li>
+     * <li>specialEleven(23) --> true</li>
+     * <li>specialEleven(24) --> false</li>
      * </ul>
-     * @param n number
+     * @param n non-negative number
      * @return <code>true</code> if the <code>number</code> is a multiple of 11 or if <code>number - 1</code> is a
      *         multiple of 11. Otherwise returns <code>false</code>
      */
     public static boolean specialEleven( int n )
     {
         return ( n % 11 == 0 ) || ( ( n - 1 ) % 11 == 0 );
+    }
+
+    /**
+     * Return true if the given non-negative number is 1 or 2 more than a multiple of 20.
+     * <ul>
+     * <li>more20(20) --> false</li>
+     * <li>more20(21) --> true</li>
+     * <li>more20(22) --> true</li>
+     * </ul>
+     * @param n non-negative number
+     * @return <code>true</code> if the <code>number</code> is 1 or 2 more than a multiple of 20. . Otherwise returns
+     *         <code>false</code>
+     */
+    public static boolean more20( int n )
+    {
+        if ( n == 0 )
+        {
+            return false;
+        }
+
+        return ( ( n - 1 ) % 20 == 0 || ( n - 2 ) % 20 == 0 );
     }
 }
