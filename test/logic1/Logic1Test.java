@@ -148,4 +148,15 @@ public class Logic1Test
         assertTrue( Logic1.specialEleven( 1 ) );
         assertFalse( Logic1.specialEleven( 2 ) );
     }
+
+    @Test
+    public void testMore20() throws Exception
+    {
+        assertFalse( Logic1.more20( 0 ) );
+        assertTrue( Logic1.more20( 1 ) );
+        assertTrue( Logic1.more20( 2 ) );
+        assertFalse( Logic1.more20( 20 ) );
+        assertTrue( Logic1.more20( 21 ) );
+        assertTrue( Logic1.more20( 22 ) );
+    }
 }
