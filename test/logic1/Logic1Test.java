@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 
 /**
  * Date: 17.06.13
- *
  * @author Sergey Kandalintsev
  */
 public class Logic1Test
@@ -137,5 +136,16 @@ public class Logic1Test
         assertFalse( Logic1.in1To10( 7, true ) );
         assertTrue( Logic1.in1To10( 10, true ) );
         assertTrue( Logic1.in1To10( 11, true ) );
+    }
+
+    @Test
+    public void testSpecialEleven() throws Exception
+    {
+        assertTrue( Logic1.specialEleven( 121 ) );
+        assertTrue( Logic1.specialEleven( 122 ) );
+        assertFalse( Logic1.specialEleven( 123 ) );
+        assertTrue( Logic1.specialEleven( 0 ) );
+        assertTrue( Logic1.specialEleven( 1 ) );
+        assertFalse( Logic1.specialEleven( 2 ) );
     }
 }
