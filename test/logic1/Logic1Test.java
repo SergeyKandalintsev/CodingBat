@@ -189,6 +189,27 @@ public class Logic1Test
         assertFalse( Logic1.nearTen( 17 ) );
         assertFalse( Logic1.nearTen( 6 ) );
         assertFalse( Logic1.nearTen( 155 ) );
+    }
 
+    @Test
+    public void testTeenSum() throws Exception
+    {
+        assertEquals( 7, Logic1.teenSum( 4, 3 ) );
+        assertEquals( 19, Logic1.teenSum( 13, 11 ) );
+        assertEquals( 19, Logic1.teenSum( 8, 19 ) );
+        assertEquals( 58, Logic1.teenSum( 20, 38 ) );
+    }
+
+    @Test
+    public void testAnswerCell() throws Exception
+    {
+        assertTrue( Logic1.answerCell( false, false, false ) );
+        assertFalse( Logic1.answerCell( false, false, true ) );
+        assertTrue( Logic1.answerCell( false, true, false ) );
+        assertFalse( Logic1.answerCell( false, true, true ) );
+        assertFalse( Logic1.answerCell( true, false, false ) );
+        assertFalse( Logic1.answerCell( true, false, true ) );
+        assertTrue( Logic1.answerCell( true, true, false ) );
+        assertFalse( Logic1.answerCell( true, true, true ) );
     }
 }
