@@ -260,4 +260,44 @@ public class Logic1
 
         return remainder <= 2 || remainder >= 8;
     }
+
+    /**
+     * Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19 inclusive, are extra lucky.
+     * So if either value is a teen, just return 19.
+     * <ul>
+     * <li>teenSum(3, 4) --> 7</li>
+     * <li>teenSum(10, 13) --> 19</li>
+     * <li>teenSum(13, 2) --> 19</li>
+     * </ul>
+     * @param a number
+     * @param b number
+     * @return if either of the numbers is teen returns 19, otherwise returns sum of the numbers
+     */
+    public static int teenSum( int a, int b )
+    {
+        return isTeen( a ) || isTeen( b ) ? 19 : a + b;
+    }
+
+    private static boolean isTeen( int n )
+    {
+        return 13 <= n && n <= 19;
+    }
+
+    /**
+     * Your cell phone rings. Return true if you should answer it. Normally you answer, except in the morning you only
+     * answer if it is your mom calling. In all cases, if you are asleep, you do not answer.
+     * <ul>
+     * <li>answerCell(false, false, false) --> true</li>
+     * <li>answerCell(false, false, true) --> false</li>
+     * <li>answerCell(true, false, false) --> false</li>
+     * </ul>
+     * @param isMorning <code>true</code> if it is morning now, <code>false</code> otherwise
+     * @param isMom     <code>true</code> if it is mom calling, <code>false</code> otherwise
+     * @param isAsleep  <code>true</code> you are asleep, <code>false</code> otherwise
+     * @return <code>true</code> if you should answer, <code>false</code> otherwise
+     */
+    public static boolean answerCell( boolean isMorning, boolean isMom, boolean isAsleep )
+    {
+        return !isAsleep && ( !isMorning || isMom );
+    }
 }
