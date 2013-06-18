@@ -2,7 +2,6 @@ package logic1;
 
 /**
  * Date: 17.06.13
- *
  * @author Sergey Kandalintsev
  */
 public class Logic1
@@ -16,10 +15,8 @@ public class Logic1
      * <li>cigarParty(50, false) --> true</li>
      * <li>cigarParty(70, true) --> true</li>
      * </ul>
-     *
      * @param cigars    number of cigars
      * @param isWeekend <code>true</code> if it is the weekend, <code>false</code> otherwise
-     *
      * @return <code>true</code> if the squirrel party is successful, <code>false</code> otherwise
      */
     public static boolean cigarParty( int cigars, boolean isWeekend )
@@ -38,10 +35,8 @@ public class Logic1
      * <li>dateFashion(5, 2) --> 0</li>
      * <li>dateFashion(5, 5) --> 1</li>
      * </ul>
-     *
      * @param you  the stylishness of your clothes in the range 0..10
      * @param date the stylishness of your date's clothes
-     *
      * @return the result getting the table (0 = no, 1 = maybe, 2 = yes)
      */
     public static int dateFashion( int you, int date )
@@ -66,10 +61,8 @@ public class Logic1
      * <li>squirrelPlay(95, false) --> false</li>
      * <li>squirrelPlay(95, true) --> true</li>
      * </ul>
-     *
      * @param temp     temperature
      * @param isSummer <code>true</code> if it is summer, <code>false</code> otherwise
-     *
      * @return <code>true</code> if the squirrels play, <code>false</code> otherwise
      */
     public static boolean squirrelPlay( int temp, boolean isSummer )
@@ -87,10 +80,8 @@ public class Logic1
      * <li>caughtSpeeding(65, false) --> 1</li>
      * <li>caughtSpeeding(65, true) --> 0true</li>
      * </ul>
-     *
      * @param speed
      * @param isBirthday
-     *
      * @return ticket size (0=no ticket, 1=small ticket, 2=big ticket)
      */
     public static int caughtSpeeding( int speed, boolean isBirthday )
@@ -118,10 +109,8 @@ public class Logic1
      * <li>sortaSum(9, 4) --> 20</li>
      * <li>sortaSum(10, 11) --> 21</li>
      * </ul>
-     *
      * @param a number
      * @param b number
-     *
      * @return sum of <code>a</code> and <code>b</code> ( if sum in the range 10..19 returns 20)
      */
     public static int sortaSum( int a, int b )
@@ -136,10 +125,8 @@ public class Logic1
      * vacation, return a string of the form "7:00" indicating when the alarm clock should ring. Weekdays, the
      * alarm should be "7:00" and on the weekend it should be "10:00". Unless we are on vacation -- then on weekdays
      * it should be "10:00" and weekends it should be "off".
-     *
      * @param day      day of the week (0=Sun, 1=Mon, 2=Tue, ...6=Sat)
      * @param vacation <code>true</code> if we are on vacation, <code>false</code> otherwise
-     *
      * @return when the alarm clock should ring or "off"
      */
     public static String alarmClock( int day, boolean vacation )
@@ -160,10 +147,8 @@ public class Logic1
      * <li>love6(4, 5) --> false</li>
      * <li>love6(1, 5) --> true</li>
      * </ul>
-     *
      * @param a number
      * @param b number
-     *
      * @return <code>true</code> if either <code>a</code> or <code>b</code> is 6, or if their sum or difference is 6.
      *         Otherwise returns <code>false</code>.
      */
@@ -180,10 +165,8 @@ public class Logic1
      * <li>in1To10(11, false) --> false</li>
      * <li>in1To10(11, true) --> true</li>
      * </ul>
-     *
      * @param n           number
      * @param outsideMode if <code>false</code> then outside mode is [1..10], otherwise outside mode is ]1..10[
-     *
      * @return <code>true</code> if n is in the range [1..10] and <code>outsideMode</code> is <code>false</code>.<br>
      *         <code>true</code> if n is in the range ]1..10[ and <code>outsideMode</code> is <code>true</code>.<br>
      *         Otherwise returns <code>false</code>.
@@ -201,9 +184,7 @@ public class Logic1
      * <li>specialEleven(23) --> true</li>
      * <li>specialEleven(24) --> false</li>
      * </ul>
-     *
      * @param n non-negative number
-     *
      * @return <code>true</code> if the <code>number</code> is a multiple of 11 or if <code>number - 1</code> is a
      *         multiple of 11. Otherwise returns <code>false</code>
      */
@@ -219,9 +200,7 @@ public class Logic1
      * <li>more20(21) --> true</li>
      * <li>more20(22) --> true</li>
      * </ul>
-     *
      * @param n non-negative number
-     *
      * @return <code>true</code> if the <code>number</code> is 1 or 2 more than a multiple of 20. Otherwise returns
      *         <code>false</code>
      */
@@ -233,13 +212,11 @@ public class Logic1
     /**
      * Return true if the given non-negative number is a multiple of 3 or 5, but not both.
      * <ul>
-     * <li>old35(3) → true</li>
-     * <li>old35(10) → true</li>
-     * <li>old35(15) → false</li>
+     * <li>old35(3) --> true</li>
+     * <li>old35(10) --> true</li>
+     * <li>old35(15) --> false</li>
      * </ul>
-     *
      * @param n non-negative number
-     *
      * @return <code>true</code> if the number is a multiple of 3 or 5, but not both. Otherwise returns
      *         <code>false</code>
      */
@@ -252,18 +229,35 @@ public class Logic1
      * Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and
      * 39 return true, but 40 returns false.
      * <ul>
-     * <li>less20(18) → true</li>
-     * <li>less20(19) → true</li>
-     * <li>less20(20) → false</li>
+     * <li>less20(18) --> true</li>
+     * <li>less20(19) --> true</li>
+     * <li>less20(20) --> false</li>
      * </ul>
-     *
-     * @param n non-negative numbe
-     *
+     * @param n non-negative number
      * @return <code>true</code> if the number is 1 or 2 less than a multiple of 20. Otherwise returns
      *         <code>false</code>
      */
     public static boolean less20( int n )
     {
         return ( n + 1 ) % 20 == 0 || ( n + 2 ) % 20 == 0;
+    }
+
+    /**
+     * Given a non-negative number "num", return true if num is within 2 of a multiple of 10. Note: (a % b) is the
+     * remainder of dividing a by b, so (7 % 5) is 2.
+     * <ul>
+     * <li>nearTen(12) --> true</li>
+     * <li>nearTen(17) --> false</li>
+     * <li>nearTen(19) --> true</li>
+     * </ul>
+     * @param num non-negative number
+     * @return <code>true</code> if the number is within 2 of a multiple of 10. Otherwise returns
+     *         <code>false</code>
+     */
+    public static boolean nearTen( int num )
+    {
+        int remainder = num % 10;
+
+        return remainder <= 2 || remainder >= 8;
     }
 }
