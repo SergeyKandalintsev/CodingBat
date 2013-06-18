@@ -159,4 +159,24 @@ public class Logic1Test
         assertTrue( Logic1.more20( 21 ) );
         assertTrue( Logic1.more20( 22 ) );
     }
+
+    @Test
+    public void testOld35() throws Exception
+    {
+        assertTrue( Logic1.old35( 3 ) );
+        assertTrue( Logic1.old35( 6 ) );
+        assertTrue( Logic1.old35( 5 ) );
+        assertTrue( Logic1.old35( 10 ) );
+        assertFalse( Logic1.old35( 15 ) );
+        assertFalse( Logic1.old35( 19 ) );
+    }
+
+    @Test
+    public void testLess20() throws Exception
+    {
+        assertTrue( Logic1.less20( 58 ) );
+        assertTrue( Logic1.less20( 59 ) );
+        assertFalse( Logic1.less20( 0 ) );
+        assertFalse( Logic1.less20( 60 ) );
+    }
 }
