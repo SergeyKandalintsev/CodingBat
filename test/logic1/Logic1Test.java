@@ -179,4 +179,16 @@ public class Logic1Test
         assertFalse( Logic1.less20( 0 ) );
         assertFalse( Logic1.less20( 60 ) );
     }
+
+    @Test
+    public void testNearTen() throws Exception
+    {
+        assertTrue( Logic1.nearTen( 12 ) );
+        assertTrue( Logic1.nearTen( 19 ) );
+        assertTrue( Logic1.nearTen( 158 ) );
+        assertFalse( Logic1.nearTen( 17 ) );
+        assertFalse( Logic1.nearTen( 6 ) );
+        assertFalse( Logic1.nearTen( 155 ) );
+
+    }
 }
