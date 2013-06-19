@@ -212,4 +212,52 @@ public class Logic1Test
         assertTrue( Logic1.answerCell( true, true, false ) );
         assertFalse( Logic1.answerCell( true, true, true ) );
     }
+
+    @Test
+    public void testTeaParty() throws Exception
+    {
+        assertEquals( 1, Logic1.teaParty( 5, 5 ) );
+        assertEquals( 1, Logic1.teaParty( 6, 11 ) );
+        assertEquals( 2, Logic1.teaParty( 6, 12 ) );
+        assertEquals( 2, Logic1.teaParty( 21, 6 ) );
+        assertEquals( 0, Logic1.teaParty( 6, 4 ) );
+        assertEquals( 0, Logic1.teaParty( 3, 7 ) );
+        assertEquals( 0, Logic1.teaParty( 2, 2 ) );
+    }
+
+    @Test
+    public void testFizzString() throws Exception
+    {
+        assertEquals( "Fizz", Logic1.fizzString( "face" ) );
+        assertEquals( "Fizz", Logic1.fizzString( "f" ) );
+        assertEquals( "", Logic1.fizzString( "" ) );
+        assertEquals( "Buzz", Logic1.fizzString( "mob" ) );
+        assertEquals( "Buzz", Logic1.fizzString( "b" ) );
+        assertEquals( "FizzBuzz", Logic1.fizzString( "fb" ) );
+        assertEquals( "string", Logic1.fizzString( "string" ) );
+    }
+
+    @Test
+    public void testFizzString2() throws Exception
+    {
+        assertEquals( "FizzBuzz!", Logic1.fizzString2( 0 ) );
+        assertEquals( "1!", Logic1.fizzString2( 1 ) );
+        assertEquals( "Fizz!", Logic1.fizzString2( 6 ) );
+        assertEquals( "Buzz!", Logic1.fizzString2( 25 ) );
+        assertEquals( "FizzBuzz!", Logic1.fizzString2( 15 ) );
+        assertEquals( "11!", Logic1.fizzString2( 11 ) );
+    }
+
+    @Test
+    public void testTwoAsOne() throws Exception
+    {
+        assertTrue( Logic1.twoAsOne( 0, 0, 0 ) );
+        assertTrue( Logic1.twoAsOne( 1, 2, 3 ) );
+        assertTrue( Logic1.twoAsOne( 1, 3, 2 ) );
+        assertTrue( Logic1.twoAsOne( 2, 1, 3 ) );
+        assertTrue( Logic1.twoAsOne( 2, 3, 1 ) );
+        assertTrue( Logic1.twoAsOne( 3, 1, 2 ) );
+        assertTrue( Logic1.twoAsOne( 3, 2, 1 ) );
+        assertFalse( Logic1.twoAsOne( 2, 1, 4 ) );
+    }
 }
