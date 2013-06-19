@@ -300,4 +300,167 @@ public class Logic1
     {
         return !isAsleep && ( !isMorning || isMom );
     }
+
+    /**
+     * We are having a party with amounts of tea and candy. Return the int outcome of the party encoded as 0=bad,
+     * 1=good, or 2=great. A party is good (1) if both tea and candy are at least 5. However, if either tea or
+     * candy is at least double the amount of the other one, the party is great (2). However, in all cases, if
+     * either tea or candy is less than 5, the party is always bad (0).
+     * <ul>
+     * <li>teaParty(6, 8) --> 1</li>
+     * <li>teaParty(3, 8) --> 0</li>
+     * <li>teaParty(20, 6) --> 2</li>
+     * </ul>
+     * @param tea   amount of tea
+     * @param candy amount of candy
+     * @return tea party outcome (0=bad, 1=good, or 2=great)
+     *         1=good, or 2=great.
+     */
+    public static int teaParty( int tea, int candy )
+    {
+        if ( tea < 5 || candy < 5 )
+        {
+            return 0;
+        }
+        int k = ( tea > candy ) ? ( tea / candy ) : ( candy / tea );
+
+        return k >= 2 ? 2 : 1;
+    }
+
+    /**
+     * Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b" return "Buzz".
+     * If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged.
+     * <ul>
+     * <li>fizzString("fig") --> "Fizz"</li>
+     * <li>fizzString("dib") --> "Buzz"</li>
+     * <li>fizzString("fib") --> "FizzBuzz"</li>
+     * </ul>
+     * @param str source string
+     * @return "Fizz", "Buzz", "FizzBuzz" or the source string
+     */
+    public static String fizzString( String str )
+    {
+        boolean isFirstF = str.startsWith( "f" );
+        boolean isLastB = str.endsWith( "b" );
+
+        if ( isFirstF && isLastB )
+        {
+            return "FizzBuzz";
+        }
+        if ( isFirstF )
+        {
+            return "Fizz";
+        }
+        if ( isLastB )
+        {
+            return "Buzz";
+        }
+
+        return str;
+    }
+
+    /**
+     * Given an int n, return the string form of the number followed by "!". So the int 6 yields "6!". Except if
+     * the number is divisible by 3 use "Fizz" instead of the number, and if the number is divisible by 5 use "Buzz",
+     * and if divisible by both 3 and 5, use "FizzBuzz".
+     * <ul>
+     * <li>fizzString2(1) --> "1!"</li>
+     * <li>fizzString2(2) --> "2!"</li>
+     * <li>fizzString2(3) --> "Fizz!"</li>
+     * </ul>
+     * @param n number
+     * @return
+     */
+    public static String fizzString2( int n )
+    {
+        if ( n % 3 == 0 && n % 5 == 0 )
+        {
+            return "FizzBuzz!";
+        }
+        if ( n % 3 == 0 )
+        {
+            return "Fizz!";
+        }
+        if ( n % 5 == 0 )
+        {
+            return "Buzz!";
+        }
+
+        return n + "!";
+    }
+
+    /**
+     * Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
+     * <ul>
+     * <li>twoAsOne(1, 2, 3) --> true</li>
+     * <li>twoAsOne(3, 1, 2) --> true</li>
+     * <li>twoAsOne(3, 2, 2) --> false</li>
+     * </ul>
+     * @param a number
+     * @param b number
+     * @param c number
+     * @return <code>true</code> if it is possible to add two of the numbers to get the third. Otherwise returns
+     *         <code>false</code>
+     */
+    public static boolean twoAsOne( int a, int b, int c )
+    {
+        return ( a == b + c ) || ( b == a + c ) || ( c == a + b );
+    }
+
+    /**
+     * Given three ints, a b c, return true if b is greater than a, and c is greater than b. However, with the
+     * exception that if "bOk" is true, b does not need to be greater than a.
+     * <ul>
+     * <li>inOrder(1, 2, 4, false) --> true</li>
+     * <li>inOrder(1, 2, 1, false) --> false</li>
+     * <li>inOrder(1, 1, 2, true) --> true</li>
+     * </ul>
+     * @param a   number
+     * @param b   number
+     * @param c   number
+     * @param bOk
+     * @return
+     */
+    public static boolean inOrder( int a, int b, int c, boolean bOk )
+    {
+        return false;
+    }
+
+    /**
+     * Given three ints, a b c, return true if they are in strict increasing order, such as 2 5 11, or 5 6 7,
+     * but not 6 5 7 or 5 5 7. However, with the exception that if "equalOk" is true, equality is allowed,
+     * such as 5 5 7 or 5 5 5.
+     * <ul>
+     * <li>inOrderEqual(2, 5, 11, false) --> true</li>
+     * <li>inOrderEqual(5, 7, 6, false) --> false</li>
+     * <li>inOrderEqual(5, 5, 7, true) --> truetrue</li>
+     * </ul>
+     * @param a       number
+     * @param b       number
+     * @param c       number
+     * @param equalOk
+     * @return
+     */
+    public static boolean inOrderEqual( int a, int b, int c, boolean equalOk )
+    {
+        return false;
+    }
+
+    /**
+     * Given three ints, a b c, return true if two or more of them have the same rightmost digit. The ints are
+     * non-negative.
+     * <ul>
+     * <li>lastDigit(23, 19, 13) --> true</li>
+     * <li>lastDigit(23, 19, 12) --> false</li>
+     * <li>lastDigit(23, 19, 3) --> true</li>
+     * </ul>
+     * @param a number
+     * @param b number
+     * @param c number
+     * @return
+     */
+    public static boolean lastDigit( int a, int b, int c )
+    {
+        return false;
+    }
 }
