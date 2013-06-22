@@ -4,10 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Date: 16.06.13
- * @author Sergey Kandalintsev  test  test
- */
 public class Warmup1Test
 {
     @Test
