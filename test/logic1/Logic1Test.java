@@ -4,10 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Date: 17.06.13
- * @author Sergey Kandalintsev
- */
 public class Logic1Test
 {
     @Test
