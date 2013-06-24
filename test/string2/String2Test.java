@@ -42,4 +42,28 @@ public class String2Test
         assertFalse( String2.catDog( "catcat" ) );
         assertFalse( String2.catDog( "dogdogcat" ) );
     }
+
+    @Test
+    public void testCountCode() throws Exception
+    {
+        assertEquals( 1, String2.countCode( "aaacodebbb" ) );
+        assertEquals( 3, String2.countCode( "AAcodeBBcoleCCccoreDD" ) );
+        assertEquals( 0, String2.countCode( "" ) );
+        assertEquals( 0, String2.countCode( "c" ) );
+        assertEquals( 1, String2.countCode( "code" ) );
+        assertEquals( 2, String2.countCode( "AAcodeBBcoleCCccorfDD" ) );
+    }
+
+    @Test
+    public void testEndOther() throws Exception
+    {
+        
+
+    }
+
+    @Test
+    public void testXyzThere() throws Exception
+    {
+
+    }
 }
