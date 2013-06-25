@@ -12,7 +12,7 @@ public class String2Test
         assertEquals( "", String2.doubleChar( "" ) );
         assertEquals( "112233", String2.doubleChar( "123" ) );
         assertEquals( "00", String2.doubleChar( "0" ) );
-        assertEquals( "TThhee  SSttrriinngg  --  112233", String2.doubleChar( "The String - 123" ) );
+        assertEquals( "TThhee SSttrriinngg -- 112233", String2.doubleChar( "The String - 123" ) );
     }
 
     @Test
@@ -57,7 +57,7 @@ public class String2Test
     @Test
     public void testEndOther() throws Exception
     {
-        
+
 
     }
 
