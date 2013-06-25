@@ -5,9 +5,9 @@ public class String2
     /**
      * Given a string, return a string where for every char in the original, there are two chars.
      * <ul>
-     * <li>doubleChar("The") → "TThhee"</li>
-     * <li>doubleChar("AAbb") → "AAAAbbbb"</li>
-     * <li>doubleChar("Hi-There") → "HHii--TThheerree"</li>
+     * <li>doubleChar("The") --> "TThhee"</li>
+     * <li>doubleChar("AAbb") --> "AAAAbbbb"</li>
+     * <li>doubleChar("Hi-There") --> "HHii--TThheerree"</li>
      * </ul>
      * @param str not null string
      * @return string with double chars
@@ -27,9 +27,9 @@ public class String2
     /**
      * Return the number of times that the string "hi" appears anywhere in the given string.
      * <ul>
-     * <li>countHi("abc hi ho") → 1</li>
-     * <li>countHi("ABChi hi") → 2</li>
-     * <li>countHi("hihi") → 2</li>
+     * <li>countHi("abc hi ho") --> 1</li>
+     * <li>countHi("ABChi hi") --> 2</li>
+     * <li>countHi("hihi") --> 2</li>
      * </ul>
      * @param str not null string
      * @return number of times that the string "hi" appears in the given string
@@ -49,13 +49,13 @@ public class String2
     /**
      * Return true if the string "cat" and "dog" appear the same number of times in the given string.
      * <ul>
-     * <li>catDog("catdog") → true</li>
-     * <li>catDog("catcat") → false</li>
-     * <li>catDog("1cat1cadodog") → true</li>
+     * <li>catDog("catdog") --> true</li>
+     * <li>catDog("catcat") --> false</li>
+     * <li>catDog("1cat1cadodog") --> true</li>
      * </ul>
      * @param str not null string
      * @return <code>true</code> if the string "cat" and "dog" appear the same number of times in the given string,
-     *         <code>false</code> otherwise
+     * <code>false</code> otherwise
      */
     public static boolean catDog( String str )
     {
@@ -81,13 +81,13 @@ public class String2
      * Return the number of times that the string "code" appears anywhere in the given string, except we'll accept
      * any letter for the 'd', so "cope" and "cooe" count.
      * <ul>
-     * <li>countCode("aaacodebbb") → 1</li>
-     * <li>countCode("codexxcode") → 2</li>
-     * <li>countCode("cozexxcope") → 2</li>
+     * <li>countCode("aaacodebbb") --> 1</li>
+     * <li>countCode("codexxcode") --> 2</li>
+     * <li>countCode("cozexxcope") --> 2</li>
      * </ul>
      * @param str not null string
      * @return number of times that the string "coXe" (where X means any character) appears anywhere in
-     *         the given string
+     * the given string
      */
     public static int countCode( String str )
     {
@@ -112,14 +112,14 @@ public class String2
      * ignoring upper/lower case differences (in other words, the computation should not be "case sensitive").
      * Note: str.toLowerCase() returns the lowercase version of a string.
      * <ul>
-     * <li>endOther("Hiabc", "abc") → true</li>
-     * <li>endOther("AbC", "HiaBc") → true</li>
-     * <li>endOther("abc", "abXabc") → true</li>
+     * <li>endOther("Hiabc", "abc") --> true</li>
+     * <li>endOther("AbC", "HiaBc") --> true</li>
+     * <li>endOther("abc", "abXabc") --> true</li>
      * </ul>
      * @param a string
      * @param b string
      * @return <code>true</code> if either of the strings appears at the very end of the other string (ignoring case
-     *         difference), <code>false</code> otherwise
+     * difference), <code>false</code> otherwise
      */
     public static boolean endOther( String a, String b )
     {
@@ -133,13 +133,13 @@ public class String2
      * Return true if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a
      * period (.). So "xxyz" counts but "x.xyz" does not.
      * <ul>
-     * <li>xyzThere("abcxyz") → true</li>
-     * <li>xyzThere("abc.xyz") → false</li>
-     * <li>xyzThere("xyz.abc") → true</li>
+     * <li>xyzThere("abcxyz") --> true</li>
+     * <li>xyzThere("abc.xyz") --> false</li>
+     * <li>xyzThere("xyz.abc") --> true</li>
      * </ul>
      * @param str string
      * @return <code>true</code> if the given string contains "xyz" not directly preceeded by a '.' symbol,
-     *         <code>false</code> otherwise
+     * <code>false</code> otherwise
      */
     public static boolean xyzThere( String str )
     {
