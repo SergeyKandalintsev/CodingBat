@@ -256,4 +256,124 @@ public class Logic1Test
         assertTrue( Logic1.twoAsOne( 3, 2, 1 ) );
         assertFalse( Logic1.twoAsOne( 2, 1, 4 ) );
     }
+
+    @Test
+    public void testInOrder() throws Exception
+    {
+        assertTrue( Logic1.inOrder( 1, 2, 3, false ) );
+        assertTrue( Logic1.inOrder( 1, 2, 3, true ) );
+        assertFalse( Logic1.inOrder( 1, 1, 3, false ) );
+        assertTrue( Logic1.inOrder( 1, 1, 3, true ) );
+        assertFalse( Logic1.inOrder( 1, 3, 3, false ) );
+        assertFalse( Logic1.inOrder( 1, 3, 3, true ) );
+        assertFalse( Logic1.inOrder( 1, -5, 3, false ) );
+        assertTrue( Logic1.inOrder( 1, -5, 3, true ) );
+    }
+
+    @Test
+    public void testInOrderEqual() throws Exception
+    {
+        assertTrue( Logic1.inOrderEqual( 1, 2, 3, false ) );
+        assertTrue( Logic1.inOrderEqual( 1, 2, 3, true ) );
+        assertFalse( Logic1.inOrderEqual( 1, 1, 3, false ) );
+        assertTrue( Logic1.inOrderEqual( 1, 1, 3, true ) );
+        assertFalse( Logic1.inOrderEqual( 2, 1, 3, false ) );
+        assertFalse( Logic1.inOrderEqual( 2, 1, 3, true ) );
+    }
+
+    @Test
+    public void testLastDigit() throws Exception
+    {
+        assertTrue( Logic1.lastDigit( 12, 1222, 5 ) );
+        assertTrue( Logic1.lastDigit( 12, 5, 1222 ) );
+        assertTrue( Logic1.lastDigit( 5, 12, 122 ) );
+        assertTrue( Logic1.lastDigit( 2, 12, 122 ) );
+        assertFalse( Logic1.lastDigit( 2, 3, 181 ) );
+    }
+
+    @Test
+    public void testLessBy10() throws Exception
+    {
+        assertTrue( Logic1.lessBy10( 1, 11, 8 ) );
+        assertTrue( Logic1.lessBy10( 21, 11, 8 ) );
+        assertTrue( Logic1.lessBy10( 38, 33, 8 ) );
+        assertFalse( Logic1.lessBy10( -2, 3, -5 ) );
+    }
+
+    @Test
+    public void testWithoutDoubles() throws Exception
+    {
+        assertEquals( 3, Logic1.withoutDoubles( 1, 2, false ) );
+        assertEquals( 12, Logic1.withoutDoubles( 6, 6, false ) );
+        assertEquals( 3, Logic1.withoutDoubles( 1, 2, true ) );
+        assertEquals( 5, Logic1.withoutDoubles( 2, 2, true ) );
+        assertEquals( 7, Logic1.withoutDoubles( 6, 6, true ) );
+    }
+
+    @Test
+    public void testMaxMod5() throws Exception
+    {
+        assertEquals( 3, Logic1.maxMod5( 2, 3 ) );
+        assertEquals( 6, Logic1.maxMod5( 6, 2 ) );
+        assertEquals( 3, Logic1.maxMod5( 3, 2 ) );
+        assertEquals( 12, Logic1.maxMod5( 8, 12 ) );
+        assertEquals( 7, Logic1.maxMod5( 7, 12 ) );
+        assertEquals( 6, Logic1.maxMod5( 11, 6 ) );
+        assertEquals( 2, Logic1.maxMod5( 2, 7 ) );
+        assertEquals( 0, Logic1.maxMod5( 7, 7 ) );
+        assertEquals( 9, Logic1.maxMod5( 9, 1 ) );
+        assertEquals( 9, Logic1.maxMod5( 9, 14 ) );
+        assertEquals( 2, Logic1.maxMod5( 1, 2 ) );
+
+    }
+
+    @Test
+    public void testRedTicket() throws Exception
+    {
+        assertEquals( 10, Logic1.redTicket( 2, 2, 2 ) );
+        assertEquals( 5, Logic1.redTicket( 1, 1, 1 ) );
+        assertEquals( 5, Logic1.redTicket( 0, 0, 0 ) );
+        assertEquals( 1, Logic1.redTicket( 0, 1, 2 ) );
+        assertEquals( 0, Logic1.redTicket( 0, 0, 2 ) );
+    }
+
+    @Test
+    public void testGreenTicket() throws Exception
+    {
+        assertEquals( 20, Logic1.greenTicket( 5, 5, 5 ) );
+        assertEquals( 10, Logic1.greenTicket( 10, 10, 5 ) );
+        assertEquals( 10, Logic1.greenTicket( 10, 5, 10 ) );
+        assertEquals( 10, Logic1.greenTicket( 5, 10, 10 ) );
+        assertEquals( 0, Logic1.greenTicket( 5, 10, 15 ) );
+    }
+
+    @Test
+    public void testBlueTicket() throws Exception
+    {
+        assertEquals( 10, Logic1.blueTicket( 6, 1, 4 ) );
+        assertEquals( 5, Logic1.blueTicket( 4, 11, 1 ) );
+        assertEquals( 0, Logic1.blueTicket( 8, 3, 8 ) );
+    }
+
+    @Test
+    public void testShareDigit() throws Exception
+    {
+        assertTrue( Logic1.shareDigit( 22, 22 ) );
+        assertTrue( Logic1.shareDigit( 22, 32 ) );
+        assertTrue( Logic1.shareDigit( 12, 23 ) );
+        assertTrue( Logic1.shareDigit( 28, 81 ) );
+        assertFalse( Logic1.shareDigit( 12, 34 ) );
+    }
+
+    @Test
+    public void testSumLimit() throws Exception
+    {
+        assertEquals( 9, Logic1.sumLimit( 4, 5 ) );
+        assertEquals( 8, Logic1.sumLimit( 8, 3 ) );
+        assertEquals( 50, Logic1.sumLimit( 11, 39 ) );
+        assertEquals( 11, Logic1.sumLimit( 11, 99 ) );
+        assertEquals( 0, Logic1.sumLimit( 0, 0 ) );
+        assertEquals( 1, Logic1.sumLimit( 1, 256 ) );
+        assertEquals( 90000001, Logic1.sumLimit( 90000000, 1 ) );
+    }
 }
