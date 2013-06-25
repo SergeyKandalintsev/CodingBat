@@ -53,4 +53,121 @@ public class Warmup1Test
         assertEquals( 23, Warmup1.diff21( -2 ) );
         assertEquals( 58, Warmup1.diff21( 50 ) );
     }
+
+    @Test
+    public void testParrotTrouble() throws Exception
+    {
+        assertTrue( Warmup1.parrotTrouble( true, 6 ) );
+        assertFalse( Warmup1.parrotTrouble( true, 7 ) );
+        assertFalse( Warmup1.parrotTrouble( false, 6 ) );
+        assertTrue( Warmup1.parrotTrouble( true, 21 ) );
+        assertFalse( Warmup1.parrotTrouble( false, 21 ) );
+        assertFalse( Warmup1.parrotTrouble( false, 20 ) );
+        assertTrue( Warmup1.parrotTrouble( true, 23 ) );
+        assertFalse( Warmup1.parrotTrouble( false, 23 ) );
+        assertFalse( Warmup1.parrotTrouble( true, 20 ) );
+        assertFalse( Warmup1.parrotTrouble( false, 12 ) );
+    }
+
+    @Test
+    public void testMakes10() throws Exception
+    {
+        assertTrue( Warmup1.makes10( 9, 10 ) );
+        assertTrue( Warmup1.makes10( 1, 9 ) );
+        assertTrue( Warmup1.makes10( 10, 1 ) );
+        assertTrue( Warmup1.makes10( 10, 10 ) );
+        assertTrue( Warmup1.makes10( 8, 2 ) );
+        assertTrue( Warmup1.makes10( 10, 42 ) );
+        assertTrue( Warmup1.makes10( 12, -2 ) );
+        assertFalse( Warmup1.makes10( 9, 9 ) );
+        assertFalse( Warmup1.makes10( 8, 3 ) );
+    }
+
+    @Test
+    public void testNearHundred() throws Exception
+    {
+        assertTrue( Warmup1.nearHundred( 93 ) );
+        assertTrue( Warmup1.nearHundred( 90 ) );
+        assertTrue( Warmup1.nearHundred( 110 ) );
+        assertTrue( Warmup1.nearHundred( 191 ) );
+        assertTrue( Warmup1.nearHundred( 190 ) );
+        assertTrue( Warmup1.nearHundred( 200 ) );
+        assertTrue( Warmup1.nearHundred( 210 ) );
+        assertFalse( Warmup1.nearHundred( 89 ) );
+        assertFalse( Warmup1.nearHundred( 111 ) );
+        assertFalse( Warmup1.nearHundred( 121 ) );
+        assertFalse( Warmup1.nearHundred( 0 ) );
+        assertFalse( Warmup1.nearHundred( 5 ) );
+        assertFalse( Warmup1.nearHundred( 189 ) );
+        assertFalse( Warmup1.nearHundred( 211 ) );
+        assertFalse( Warmup1.nearHundred( 290 ) );
+    }
+
+    @Test
+    public void testPosNeg() throws Exception
+    {
+        assertTrue( Warmup1.posNeg( -1, 1, false ) );
+        assertTrue( Warmup1.posNeg( 1, -1, false ) );
+        assertFalse( Warmup1.posNeg( 0, 0, false ) );
+        assertFalse( Warmup1.posNeg( 1, 0, false ) );
+        assertFalse( Warmup1.posNeg( 1, 1, false ) );
+        assertTrue( Warmup1.posNeg( -1, -1, true ) );
+        assertFalse( Warmup1.posNeg( -1, 1, true ) );
+        assertFalse( Warmup1.posNeg( 1, 1, true ) );
+        assertFalse( Warmup1.posNeg( -1, 0, true ) );
+    }
+
+    @Test
+    public void testNotString() throws Exception
+    {
+        assertEquals( "not candy", Warmup1.notString( "candy" ) );
+        assertEquals( "not x", Warmup1.notString( "x" ) );
+        assertEquals( "not bad", Warmup1.notString( "not bad" ) );
+        assertEquals( "not bad", Warmup1.notString( "bad" ) );
+        assertEquals( "not", Warmup1.notString( "not" ) );
+        assertEquals( "not is not", Warmup1.notString( "is not" ) );
+        assertEquals( "not no", Warmup1.notString( "no" ) );
+        assertEquals( "not ", Warmup1.notString( "" ) );
+    }
+
+    @Test
+    public void testMissingChar() throws Exception
+    {
+        assertEquals( "", Warmup1.missingChar( "0", 0 ) );
+        assertEquals( "1", Warmup1.missingChar( "01", 0 ) );
+        assertEquals( "0", Warmup1.missingChar( "01", 1 ) );
+        assertEquals( "12", Warmup1.missingChar( "012", 0 ) );
+        assertEquals( "02", Warmup1.missingChar( "012", 1 ) );
+        assertEquals( "01", Warmup1.missingChar( "012", 2 ) );
+        assertEquals( "023", Warmup1.missingChar( "0123", 1 ) );
+        assertEquals( "013", Warmup1.missingChar( "0123", 2 ) );
+    }
+
+    @Test
+    public void testFrontBack() throws Exception
+    {
+        assertEquals( "", Warmup1.frontBack( "" ) );
+        assertEquals( "0", Warmup1.frontBack( "0" ) );
+        assertEquals( "10", Warmup1.frontBack( "01" ) );
+        assertEquals( "210", Warmup1.frontBack( "012" ) );
+        assertEquals( "3120", Warmup1.frontBack( "0123" ) );
+    }
+
+    @Test
+    public void testFront3() throws Exception
+    {
+        assertEquals( "", Warmup1.front3( "" ) );
+        assertEquals( "000", Warmup1.front3( "0" ) );
+        assertEquals( "010101", Warmup1.front3( "01" ) );
+        assertEquals( "012012012", Warmup1.front3( "012" ) );
+        assertEquals( "012012012", Warmup1.front3( "0123" ) );
+    }
+
+    @Test
+    public void testBackAround() throws Exception
+    {
+        assertEquals( "000", Warmup1.backAround( "0" ) );
+        assertEquals( "1011", Warmup1.backAround( "01" ) );
+        assertEquals( "20122", Warmup1.backAround( "012" ) );
+    }
 }
