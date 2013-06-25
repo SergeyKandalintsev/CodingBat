@@ -2,6 +2,7 @@ package logic1;
 
 /**
  * Date: 17.06.13
+ *
  * @author Sergey Kandalintsev
  */
 public class Logic1
@@ -15,8 +16,10 @@ public class Logic1
      * <li>cigarParty(50, false) --> true</li>
      * <li>cigarParty(70, true) --> true</li>
      * </ul>
+     *
      * @param cigars    number of cigars
      * @param isWeekend <code>true</code> if it is the weekend, <code>false</code> otherwise
+     *
      * @return <code>true</code> if the squirrel party is successful, <code>false</code> otherwise
      */
     public static boolean cigarParty( int cigars, boolean isWeekend )
@@ -35,8 +38,10 @@ public class Logic1
      * <li>dateFashion(5, 2) --> 0</li>
      * <li>dateFashion(5, 5) --> 1</li>
      * </ul>
+     *
      * @param you  the stylishness of your clothes in the range 0..10
      * @param date the stylishness of your date's clothes
+     *
      * @return the result getting the table (0 = no, 1 = maybe, 2 = yes)
      */
     public static int dateFashion( int you, int date )
@@ -61,8 +66,10 @@ public class Logic1
      * <li>squirrelPlay(95, false) --> false</li>
      * <li>squirrelPlay(95, true) --> true</li>
      * </ul>
+     *
      * @param temp     temperature
      * @param isSummer <code>true</code> if it is summer, <code>false</code> otherwise
+     *
      * @return <code>true</code> if the squirrels play, <code>false</code> otherwise
      */
     public static boolean squirrelPlay( int temp, boolean isSummer )
@@ -80,8 +87,10 @@ public class Logic1
      * <li>caughtSpeeding(65, false) --> 1</li>
      * <li>caughtSpeeding(65, true) --> 0true</li>
      * </ul>
-     * @param speed
-     * @param isBirthday
+     *
+     * @param speed      your speed
+     * @param isBirthday <code>true</code> if it is your birthday today, <code>false</code> otherwise
+     *
      * @return ticket size (0=no ticket, 1=small ticket, 2=big ticket)
      */
     public static int caughtSpeeding( int speed, boolean isBirthday )
@@ -109,8 +118,10 @@ public class Logic1
      * <li>sortaSum(9, 4) --> 20</li>
      * <li>sortaSum(10, 11) --> 21</li>
      * </ul>
+     *
      * @param a number
      * @param b number
+     *
      * @return sum of <code>a</code> and <code>b</code> ( if sum in the range 10..19 returns 20)
      */
     public static int sortaSum( int a, int b )
@@ -125,8 +136,10 @@ public class Logic1
      * vacation, return a string of the form "7:00" indicating when the alarm clock should ring. Weekdays, the
      * alarm should be "7:00" and on the weekend it should be "10:00". Unless we are on vacation -- then on weekdays
      * it should be "10:00" and weekends it should be "off".
+     *
      * @param day      day of the week (0=Sun, 1=Mon, 2=Tue, ...6=Sat)
      * @param vacation <code>true</code> if we are on vacation, <code>false</code> otherwise
+     *
      * @return when the alarm clock should ring or "off"
      */
     public static String alarmClock( int day, boolean vacation )
@@ -147,8 +160,10 @@ public class Logic1
      * <li>love6(4, 5) --> false</li>
      * <li>love6(1, 5) --> true</li>
      * </ul>
+     *
      * @param a number
      * @param b number
+     *
      * @return <code>true</code> if either <code>a</code> or <code>b</code> is 6, or if their sum or difference is 6.
      *         Otherwise returns <code>false</code>.
      */
@@ -165,8 +180,10 @@ public class Logic1
      * <li>in1To10(11, false) --> false</li>
      * <li>in1To10(11, true) --> true</li>
      * </ul>
+     *
      * @param n           number
      * @param outsideMode if <code>false</code> then outside mode is [1..10], otherwise outside mode is ]1..10[
+     *
      * @return <code>true</code> if n is in the range [1..10] and <code>outsideMode</code> is <code>false</code>.<br>
      *         <code>true</code> if n is in the range ]1..10[ and <code>outsideMode</code> is <code>true</code>.<br>
      *         Otherwise returns <code>false</code>.
@@ -184,7 +201,9 @@ public class Logic1
      * <li>specialEleven(23) --> true</li>
      * <li>specialEleven(24) --> false</li>
      * </ul>
+     *
      * @param n non-negative number
+     *
      * @return <code>true</code> if the <code>number</code> is a multiple of 11 or if <code>number - 1</code> is a
      *         multiple of 11. Otherwise returns <code>false</code>
      */
@@ -200,7 +219,9 @@ public class Logic1
      * <li>more20(21) --> true</li>
      * <li>more20(22) --> true</li>
      * </ul>
+     *
      * @param n non-negative number
+     *
      * @return <code>true</code> if the <code>number</code> is 1 or 2 more than a multiple of 20. Otherwise returns
      *         <code>false</code>
      */
@@ -216,7 +237,9 @@ public class Logic1
      * <li>old35(10) --> true</li>
      * <li>old35(15) --> false</li>
      * </ul>
+     *
      * @param n non-negative number
+     *
      * @return <code>true</code> if the number is a multiple of 3 or 5, but not both. Otherwise returns
      *         <code>false</code>
      */
@@ -233,7 +256,9 @@ public class Logic1
      * <li>less20(19) --> true</li>
      * <li>less20(20) --> false</li>
      * </ul>
+     *
      * @param n non-negative number
+     *
      * @return <code>true</code> if the number is 1 or 2 less than a multiple of 20. Otherwise returns
      *         <code>false</code>
      */
@@ -250,7 +275,9 @@ public class Logic1
      * <li>nearTen(17) --> false</li>
      * <li>nearTen(19) --> true</li>
      * </ul>
+     *
      * @param num non-negative number
+     *
      * @return <code>true</code> if the number is within 2 of a multiple of 10. Otherwise returns
      *         <code>false</code>
      */
@@ -269,8 +296,10 @@ public class Logic1
      * <li>teenSum(10, 13) --> 19</li>
      * <li>teenSum(13, 2) --> 19</li>
      * </ul>
+     *
      * @param a number
      * @param b number
+     *
      * @return if either of the numbers is teen returns 19, otherwise returns sum of the numbers
      */
     public static int teenSum( int a, int b )
@@ -291,9 +320,11 @@ public class Logic1
      * <li>answerCell(false, false, true) --> false</li>
      * <li>answerCell(true, false, false) --> false</li>
      * </ul>
+     *
      * @param isMorning <code>true</code> if it is morning now, <code>false</code> otherwise
      * @param isMom     <code>true</code> if it is mom calling, <code>false</code> otherwise
      * @param isAsleep  <code>true</code> you are asleep, <code>false</code> otherwise
+     *
      * @return <code>true</code> if you should answer, <code>false</code> otherwise
      */
     public static boolean answerCell( boolean isMorning, boolean isMom, boolean isAsleep )
@@ -311,8 +342,10 @@ public class Logic1
      * <li>teaParty(3, 8) --> 0</li>
      * <li>teaParty(20, 6) --> 2</li>
      * </ul>
+     *
      * @param tea   amount of tea
      * @param candy amount of candy
+     *
      * @return tea party outcome (0=bad, 1=good, or 2=great)
      *         1=good, or 2=great.
      */
@@ -335,7 +368,9 @@ public class Logic1
      * <li>fizzString("dib") --> "Buzz"</li>
      * <li>fizzString("fib") --> "FizzBuzz"</li>
      * </ul>
+     *
      * @param str source string
+     *
      * @return "Fizz", "Buzz", "FizzBuzz" or the source string
      */
     public static String fizzString( String str )
@@ -368,8 +403,10 @@ public class Logic1
      * <li>fizzString2(2) --> "2!"</li>
      * <li>fizzString2(3) --> "Fizz!"</li>
      * </ul>
+     *
      * @param n number
-     * @return
+     *
+     * @return String value according to exercise conditions
      */
     public static String fizzString2( int n )
     {
@@ -396,9 +433,11 @@ public class Logic1
      * <li>twoAsOne(3, 1, 2) --> true</li>
      * <li>twoAsOne(3, 2, 2) --> false</li>
      * </ul>
+     *
      * @param a number
      * @param b number
      * @param c number
+     *
      * @return <code>true</code> if it is possible to add two of the numbers to get the third. Otherwise returns
      *         <code>false</code>
      */
@@ -415,15 +454,17 @@ public class Logic1
      * <li>inOrder(1, 2, 1, false) --> false</li>
      * <li>inOrder(1, 1, 2, true) --> true</li>
      * </ul>
+     *
      * @param a   number
      * @param b   number
      * @param c   number
-     * @param bOk
-     * @return
+     * @param bOk <code>true</code> if b does not need to be greater than a, <code>false</code> otherwise
+     *
+     * @return boolean value according to exercise conditions
      */
     public static boolean inOrder( int a, int b, int c, boolean bOk )
     {
-        return false;
+        return bOk ? ( b < c ) : ( a < b && b < c );
     }
 
     /**
@@ -435,15 +476,18 @@ public class Logic1
      * <li>inOrderEqual(5, 7, 6, false) --> false</li>
      * <li>inOrderEqual(5, 5, 7, true) --> truetrue</li>
      * </ul>
+     *
      * @param a       number
      * @param b       number
      * @param c       number
-     * @param equalOk
-     * @return
+     * @param equalOk <code>true</code> if a, b and c does need to be in strict increasing order,
+     *                <code>false</code> otherwise
+     *
+     * @return boolean value according to exercise conditions
      */
     public static boolean inOrderEqual( int a, int b, int c, boolean equalOk )
     {
-        return false;
+        return equalOk ? ( a <= b && b <= c ) : ( a < b && b < c );
     }
 
     /**
@@ -454,13 +498,249 @@ public class Logic1
      * <li>lastDigit(23, 19, 12) --> false</li>
      * <li>lastDigit(23, 19, 3) --> true</li>
      * </ul>
-     * @param a number
-     * @param b number
-     * @param c number
-     * @return
+     *
+     * @param a non-negative number
+     * @param b non-negativenumber
+     * @param c non-negativenumber
+     *
+     * @return <code>true</code> if two or more of the numbers have the same rightmost digit,
+     *         <code>false</code> otherwise
      */
     public static boolean lastDigit( int a, int b, int c )
     {
-        return false;
+        int aLastDigit = a % 10;
+        int bLastDigit = b % 10;
+        int cLastDigit = c % 10;
+
+        return aLastDigit == bLastDigit || bLastDigit == cLastDigit || aLastDigit == cLastDigit;
+    }
+
+    /**
+     * Given three ints, a b c, return true if one of them is 10 or more less than one of the others.
+     * <ul>
+     * <li>lessBy10(1, 7, 11) --> true</li>
+     * <li>lessBy10(1, 7, 10) --> false</li>
+     * <li>lessBy10(11, 1, 7) --> true</li>
+     * </ul>
+     *
+     * @param a number
+     * @param b number
+     * @param c number
+     *
+     * @return <code>true</code> if one of the numbers is 10 or more less than one of the others,
+     *         <code>false</code> otherwise
+     */
+    public static boolean lessBy10( int a, int b, int c )
+    {
+        return Math.abs( a - b ) >= 10 || Math.abs( a - c ) >= 10 || Math.abs( b - c ) >= 10;
+    }
+
+    /**
+     * Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is true, if the two
+     * dice show the same value, increment one die to the next value, wrapping around to 1 if its value was 6.
+     * <ul>
+     * <li>withoutDoubles(2, 3, true) --> 5</li>
+     * <li>withoutDoubles(3, 3, true) --> 7</li>
+     * <li>withoutDoubles(3, 3, false) --> 6</li>
+     * </ul>
+     *
+     * @param die1      score in the range 1..6
+     * @param die2      score in the range 1..6
+     * @param noDoubles the score of two 6-sided dice rolls
+     *
+     * @return int value according to exercise conditions
+     */
+    public static int withoutDoubles( int die1, int die2, boolean noDoubles )
+    {
+        if ( noDoubles )
+        {
+            if ( die1 == die2 )
+            {
+                die1 = ( die1 == 6 ? 1 : die1 + 1 );
+            }
+        }
+
+        return die1 + die2;
+    }
+
+    /**
+     * Given two int values, return whichever value is larger. However if the two values have the same remainder when
+     * divided by 5, then the return the smaller value. However, in all cases, if the two values are the same,
+     * return 0. Note: the % "mod" operator computes the remainder, e.g. 7 % 5 is 2.
+     * <ul>
+     * <li>maxMod5(2, 3) --> 3</li>
+     * <li>maxMod5(6, 2) --> 6</li>
+     * <li>maxMod5(3, 2) --> 3</li>
+     * </ul>
+     *
+     * @param a value
+     * @param b value
+     *
+     * @return int value according to exercise conditions
+     */
+    public static int maxMod5( int a, int b )
+    {
+        if ( a == b )
+        {
+            return 0;
+        }
+        if ( a % 5 == b % 5 )
+        {
+            return a < b ? a : b;
+        }
+
+        return a > b ? a : b;
+    }
+
+    /**
+     * You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2. If they are all the
+     * value 2, the result is 10. Otherwise if they are all the same, the result is 5. Otherwise so long as both b
+     * and c are different from a, the result is 1. Otherwise the result is 0.
+     * <ul>
+     * <li> redTicket(2, 2, 2) --> 10</li>
+     * <li>redTicket(2, 2, 1) --> 0</li>
+     * <li>redTicket(0, 0, 0) --> 5</li>
+     * </ul>
+     *
+     * @param a number
+     * @param b number
+     * @param c number
+     *
+     * @return lottery ticket score (0 or 1 or 5 or 10)
+     */
+    public static int redTicket( int a, int b, int c )
+    {
+        if ( a == 2 && b == 2 && c == 2 )
+        {
+            return 10;
+        }
+        if ( a == b && b == c )
+        {
+            return 5;
+        }
+        if ( a != b && a != c )
+        {
+            return 1;
+        }
+        return 0;
+    }
+
+    /**
+     * You have a green lottery ticket, with ints a, b, and c on it. If the numbers are all different from each other,
+     * the result is 0. If all of the numbers are the same, the result is 20. If two of the numbers are the same,
+     * the result is 10.
+     * <ul>
+     * <li>greenTicket(1, 2, 3) --> 0</li>
+     * <li>greenTicket(2, 2, 2) --> 20</li>
+     * <li>greenTicket(1, 1, 2) --> 10</li>
+     * </ul>
+     *
+     * @param a number
+     * @param b number
+     * @param c number
+     *
+     * @return lottery ticket score (0 or 10 or 20)
+     */
+    public static int greenTicket( int a, int b, int c )
+    {
+        if ( a == b && b == c )
+        {
+            return 20;
+        }
+        if ( a == b || b == c || a == c )
+        {
+            return 10;
+        }
+
+        return 0;
+    }
+
+    /**
+     * You have a blue lottery ticket, with ints a, b, and c on it. This makes three pairs, which we'll call ab, bc,
+     * and ac. Consider the sum of the numbers in each pair. If any pair sums to exactly 10, the result is 10.
+     * Otherwise if the ab sum is exactly 10 more than either bc or ac sums, the result is 5. Otherwise the
+     * result is 0.
+     * <ul>
+     * <li>blueTicket(9, 1, 0) --> 10</li>
+     * <li>blueTicket(9, 2, 0) --> 0</li>
+     * <li>blueTicket(6, 1, 4) --> 10</li>
+     * </ul>
+     *
+     * @param a number
+     * @param b number
+     * @param c number
+     *
+     * @return lottery ticket score (0 or 5 or 10)
+     */
+    public static int blueTicket( int a, int b, int c )
+    {
+        int ab = a + b;
+        int bc = b + c;
+        int ac = a + c;
+
+        if ( ab == 10 || bc == 10 || ac == 10 )
+        {
+            return 10;
+        }
+        if ( ab - bc == 10 || ab - ac == 10 )
+        {
+            return 5;
+        }
+
+        return 0;
+    }
+
+    /**
+     * Given two ints, each in the range 10..99, return true if there is a digit that appears in both numbers, such
+     * as the 2 in 12 and 23. (Note: division, e.g. n/10, gives the left digit while the % "mod" n%10 gives the right
+     * digit.)
+     * <ul>
+     * <li>shareDigit(12, 23) --> true</li>
+     * <li>shareDigit(12, 43) --> false</li>
+     * <li>shareDigit(12, 44) --> false</li>
+     * </ul>
+     *
+     * @param a number in the range 10..99
+     * @param b number in the range 10..99
+     *
+     * @return <code>true</code> if there is a digit that appears in both numbers, <code>false</code> otherwise
+     */
+    public static boolean shareDigit( int a, int b )
+    {
+        int aFirstDigit = a / 10;
+        int aLastDigit = a % 10;
+        int bFirstDigit = b / 10;
+        int bLastDigit = b % 10;
+
+        return aFirstDigit == bFirstDigit ||
+                aFirstDigit == bLastDigit ||
+                aLastDigit == bFirstDigit ||
+                aLastDigit == bLastDigit;
+    }
+
+    /**
+     * Given 2 non-negative ints, a and b, return their sum, so long as the sum has the same number of digits as a.
+     * If the sum has more digits than a, just return a without b. (Note: one way to compute the number of digits
+     * of a non-negative int n is to convert it to a string with String.valueOf(n) and then check the length of
+     * the string.)
+     * <ul>
+     * <li>sumLimit(2, 3) --> 5</li>
+     * <li>sumLimit(8, 3) --> 8</li>
+     * <li>sumLimit(8, 1) --> 9</li>
+     * </ul>
+     *
+     * @param a non-negative number
+     * @param b non-negative number
+     *
+     * @return sum of a and b if the sum has the same number of digits as a or returns a if the sum has more digits
+     *         than a.
+     */
+    public static int sumLimit( int a, int b )
+    {
+        int sum = a + b;
+        String aStr = String.valueOf( a );
+        String sumStr = String.valueOf( sum );
+
+        return sumStr.length() > aStr.length() ? a : sum;
     }
 }
