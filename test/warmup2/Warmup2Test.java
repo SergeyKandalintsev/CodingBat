@@ -45,4 +45,74 @@ public class Warmup2Test
         assertEquals( 2, Warmup2.countXX( "xxx" ) );
         assertEquals( 4, Warmup2.countXX( "0xx1xx2xxx" ) );
     }
+
+    @Test
+    public void testDoubleX() throws Exception
+    {
+        assertFalse( Warmup2.doubleX( "" ) );
+        assertFalse( Warmup2.doubleX( "x" ) );
+        assertFalse( Warmup2.doubleX( "xa" ) );
+        assertFalse( Warmup2.doubleX( "0123x" ) );
+        assertFalse( Warmup2.doubleX( "01x2x" ) );
+        assertFalse( Warmup2.doubleX( "0x1xx23" ) );
+        assertTrue( Warmup2.doubleX( "xx" ) );
+        assertTrue( Warmup2.doubleX( "012xx" ) );
+        assertTrue( Warmup2.doubleX( "xx123" ) );
+    }
+
+    @Test
+    public void testStringBits() throws Exception
+    {
+        assertEquals( "Hlo", Warmup2.stringBits( "Hello" ) );
+        assertEquals( "H", Warmup2.stringBits( "Hi" ) );
+        assertEquals( "Hello", Warmup2.stringBits( "Heeololeo" ) );
+        assertEquals( "HHH", Warmup2.stringBits( "HiHiHi" ) );
+        assertEquals( "", Warmup2.stringBits( "" ) );
+    }
+
+    @Test
+    public void testStringSplosion() throws Exception
+    {
+        assertEquals( "0", Warmup2.stringSplosion( "0" ) );
+        assertEquals( "001", Warmup2.stringSplosion( "01" ) );
+        assertEquals( "001012", Warmup2.stringSplosion( "012" ) );
+    }
+
+    @Test
+    public void testLast2() throws Exception
+    {
+        assertEquals( 1, Warmup2.last2( "hixxhi" ) );
+        assertEquals( 1, Warmup2.last2( "xaxxaxaxx" ) );
+        assertEquals( 2, Warmup2.last2( "axxxaaxx" ) );
+        assertEquals( 3, Warmup2.last2( "xxaxxaxxaxx" ) );
+        assertEquals( 0, Warmup2.last2( "xaxaxaxx" ) );
+        assertEquals( 2, Warmup2.last2( "xxxx" ) );
+        assertEquals( 0, Warmup2.last2( "hi" ) );
+        assertEquals( 0, Warmup2.last2( "h" ) );
+        assertEquals( 0, Warmup2.last2( "" ) );
+    }
+
+    @Test
+    public void testArrayCount9() throws Exception
+    {
+        assertEquals( 0, Warmup2.arrayCount9( new int[]{ } ) );
+        assertEquals( 0, Warmup2.arrayCount9( new int[]{ 1 } ) );
+        assertEquals( 1, Warmup2.arrayCount9( new int[]{ 9 } ) );
+        assertEquals( 3, Warmup2.arrayCount9( new int[]{ 9, 9, 9 } ) );
+        assertEquals( 2, Warmup2.arrayCount9( new int[]{ 9, 0, -9, 9, 2 } ) );
+    }
+
+    @Test
+    public void testArrayFront9() throws Exception
+    {
+        assertFalse( Warmup2.arrayFront9( new int[]{ } ) );
+        assertFalse( Warmup2.arrayFront9( new int[]{ 0 } ) );
+        assertFalse( Warmup2.arrayFront9( new int[]{ 8, 11 } ) );
+        assertFalse( Warmup2.arrayFront9( new int[]{ 2, 18, 32, 36, 251 } ) );
+        assertTrue( Warmup2.arrayFront9( new int[]{ 9 } ) );
+        assertTrue( Warmup2.arrayFront9( new int[]{ 9, 9 } ) );
+        assertTrue( Warmup2.arrayFront9( new int[]{ 8, 2, 9 } ) );
+        assertTrue( Warmup2.arrayFront9( new int[]{ 9, 8, 9, 0 } ) );
+        assertTrue( Warmup2.arrayFront9( new int[]{ 9, 2, 1, 8, 4, 654, 45 } ) );
+    }
 }
