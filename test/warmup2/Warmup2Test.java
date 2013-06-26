@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 
 /**
  * Date: 25.06.13
- *
  * @author Sergey Kandalintsev
  */
 public class Warmup2Test
@@ -114,5 +113,18 @@ public class Warmup2Test
         assertTrue( Warmup2.arrayFront9( new int[]{ 8, 2, 9 } ) );
         assertTrue( Warmup2.arrayFront9( new int[]{ 9, 8, 9, 0 } ) );
         assertTrue( Warmup2.arrayFront9( new int[]{ 9, 2, 1, 8, 4, 654, 45 } ) );
+    }
+
+    @Test
+    public void testArray123() throws Exception
+    {
+        assertFalse( Warmup2.array123( new int[]{ } ) );
+        assertFalse( Warmup2.array123( new int[]{ 1 } ) );
+        assertFalse( Warmup2.array123( new int[]{ 1, 2 } ) );
+        assertFalse( Warmup2.array123( new int[]{ 1, 2, 2 } ) );
+        assertFalse( Warmup2.array123( new int[]{ 1, 4, 2, 3 } ) );
+        assertTrue( Warmup2.array123( new int[]{ 1, 2, 3 } ) );
+        assertTrue( Warmup2.array123( new int[]{ 9, 8, 1, 2, 3, 4, 5, 6 } ) );
+        assertTrue( Warmup2.array123( new int[]{ 6, 7, 1, 2, 3 } ) );
     }
 }
