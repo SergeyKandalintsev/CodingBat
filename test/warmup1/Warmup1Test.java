@@ -170,4 +170,46 @@ public class Warmup1Test
         assertEquals( "1011", Warmup1.backAround( "01" ) );
         assertEquals( "20122", Warmup1.backAround( "012" ) );
     }
+
+    @Test
+    public void testOr35() throws Exception
+    {
+        assertTrue( Warmup1.or35( 0 ) );
+        assertTrue( Warmup1.or35( 6 ) );
+        assertTrue( Warmup1.or35( 10 ) );
+        assertTrue( Warmup1.or35( 15 ) );
+        assertFalse( Warmup1.or35( 11 ) );
+    }
+
+    @Test
+    public void testFront22() throws Exception
+    {
+        assertEquals( "", Warmup1.front22( "" ) );
+        assertEquals( "000", Warmup1.front22( "0" ) );
+        assertEquals( "010101", Warmup1.front22( "01" ) );
+        assertEquals( "0101201", Warmup1.front22( "012" ) );
+        assertEquals( "01012301", Warmup1.front22( "0123" ) );
+    }
+
+    @Test
+    public void testStartHi() throws Exception
+    {
+        assertTrue( Warmup1.startHi( "hi" ) );
+        assertTrue( Warmup1.startHi( "hihi" ) );
+        assertFalse( Warmup1.startHi( "" ) );
+        assertFalse( Warmup1.startHi( "0" ) );
+        assertFalse( Warmup1.startHi( "01" ) );
+        assertFalse( Warmup1.startHi( "012" ) );
+    }
+
+    @Test
+    public void testIcyHot() throws Exception
+    {
+        assertTrue( Warmup1.icyHot( -1, 101 ) );
+        assertTrue( Warmup1.icyHot( 101, -1 ) );
+        assertFalse( Warmup1.icyHot( 0, 100) );
+        assertFalse( Warmup1.icyHot( 5, 25) );
+        assertFalse( Warmup1.icyHot( -5, 99) );
+        assertFalse( Warmup1.icyHot( 101, 1) );
+    }
 }
