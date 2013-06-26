@@ -12,10 +12,8 @@ public class Warmup2
      * <li>stringTimes("Hi", 3) --> "HiHiHi"</li>
      * <li>stringTimes("Hi", 1) --> "Hi"</li>
      * </ul>
-     *
      * @param str string
      * @param n   non-negative number
-     *
      * @return string that is n copies of the original string
      */
     public static String stringTimes( String str, int n )
@@ -37,10 +35,8 @@ public class Warmup2
      * <li>frontTimes("Chocolate", 3) --> "ChoChoCho"</li>
      * <li>frontTimes("Abc", 3) --> "AbcAbcAbc"</li>
      * </ul>
-     *
      * @param str given string
      * @param n   non-negative number
-     *
      * @return String value according to exercise conditions
      */
     public static String frontTimes( String str, int n )
@@ -63,9 +59,7 @@ public class Warmup2
      * <li>countXX("xxx") → 2</li>
      * <li>countXX("xxxx") → 3</li>
      * </ul>
-     *
      * @param str given string
-     *
      * @return number of "xx" in the given string
      */
     public static int countXX( String str )
@@ -87,9 +81,7 @@ public class Warmup2
      * <li>doubleX("axaxax") → false</li>
      * <li>doubleX("xxxxx") → true</li>
      * </ul>
-     *
      * @param str given string
-     *
      * @return <code>true</code> if the first instance of "x" in the string is immediately followed by another "x",
      *         <code>false</code> otherwise
      */
@@ -112,9 +104,7 @@ public class Warmup2
      * <li>stringBits("Hi") → "H"</li>
      * <li>stringBits("Heeololeo") → "Hello"</li>
      * </ul>
-     *
      * @param str string
-     *
      * @return String value according to exercise conditions
      */
     public static String stringBits( String str )
@@ -136,9 +126,7 @@ public class Warmup2
      * <li>stringSplosion("abc") → "aababc"</li>
      * <li>stringSplosion("ab") → "aab"</li>
      * </ul>
-     *
      * @param str non-empty string
-     *
      * @return String value according to exercise conditions
      */
     public static String stringSplosion( String str )
@@ -160,9 +148,7 @@ public class Warmup2
      * <li>last2("xaxxaxaxx") → 1</li>
      * <li>last2("axxxaaxx") → 2</li>
      * </ul>
-     *
      * @param str given string
-     *
      * @return String value according to exercise conditions
      */
     public static int last2( String str )
@@ -195,9 +181,7 @@ public class Warmup2
      * <li>arrayCount9({1, 9, 9}) → 2</li>
      * <li>arrayCount9({1, 9, 9, 3, 9}) → 3</li>
      * </ul>
-     *
      * @param nums array of ints
-     *
      * @return number of 9's in the array
      */
     public static int arrayCount9( int[] nums )
@@ -223,18 +207,16 @@ public class Warmup2
      * <li>arrayFront9({1, 2, 3, 4, 9}) → false</li>
      * <li>arrayFront9({1, 2, 3, 4, 5}) → false</li>
      * </ul>
-     *
      * @param nums array of ints
-     *
      * @return <code>true</code> if one of the first 4 elements in the array is a 9, <code>false</code> otherwise
      */
     public static boolean arrayFront9( int[] nums )
     {
         int len = nums.length > 4 ? 4 : nums.length;
 
-        for (int i = 0; i < len; i++)
+        for ( int i = 0; i < len; i++ )
         {
-            if (nums[i] == 9)
+            if ( nums[i] == 9 )
             {
                 return true;
             }
@@ -243,5 +225,25 @@ public class Warmup2
         return false;
     }
 
-
+    /**
+     * Given an array of ints, return true if .. 1, 2, 3, .. appears in the array somewhere.
+     * <ul>
+     * <li>array123({1, 1, 2, 3, 1}) → true</li>
+     * <li>array123({1, 1, 2, 4, 1}) → false</li>
+     * <li>array123({1, 1, 2, 1, 2, 3}) → true</li>
+     * </ul>
+     * @param nums array of ints
+     * @return <code>true</code> if .. 1, 2, 3, .. appears in the array somewhere, <code>false</code> otherwise
+     */
+    public static boolean array123( int[] nums )
+    {
+        for ( int i = 0; i < ( nums.length - 2 ); i++ )
+        {
+            if ( ( nums[i] == 1 ) && ( nums[i + 1] == 2 ) && ( nums[i + 2] == 3 ) )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
