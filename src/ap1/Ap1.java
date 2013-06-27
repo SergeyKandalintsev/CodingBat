@@ -35,9 +35,9 @@ public class Ap1
      * Given an array of scores, return true if there are scores of 100 next to each other in the array. The array
      * length will be at least 2.
      * <ul>
-     * <li>scores100({1, 100, 100}) → true</li>
-     * <li>scores100({1, 100, 99, 100}) → false</li>
-     * <li>scores100({100, 1, 100, 100}) → truetrue</li>
+     * <li>scores100({1, 100, 100}) --> true</li>
+     * <li>scores100({1, 100, 99, 100}) --> false</li>
+     * <li>scores100({100, 1, 100, 100}) --> truetrue</li>
      * </ul>
      * @param scores array of scores, array length at least 2
      * @return <code>true</code> if there are scores of 100 next to each other in the array. Otherwise returns
@@ -45,8 +45,6 @@ public class Ap1
      */
     public static boolean scores100( int[] scores )
     {
-        boolean result = false;
-
         for ( int i = 0; i < scores.length - 1; i++ )
         {
             if ( scores[i] == 100 && scores[i + 1] == 100 )
@@ -55,6 +53,31 @@ public class Ap1
             }
         }
 
-        return result;
+        return false;
+    }
+
+    /**
+     * Given an array of scores sorted in increasing order, return true if the array contains 3 adjacent scores that
+     * differ from each other by at most 2, such as with {3, 4, 5} or {3, 5, 5}.
+     * <ul>
+     * <li>scoresClump({3, 4, 5}) --> true</li>
+     * <li>scoresClump({3, 4, 6}) --> false</li>
+     * <li>scoresClump({1, 3, 5, 5}) --> true</li>
+     * </ul>
+     * @param scores an array of scores sorted in increasing order
+     * @return <code>true</code> if the array contains 3 adjacent scores that differ from each other by at most 2.
+     *         Otherwise returns <code>false</code>
+     */
+    public static boolean scoresClump( int[] scores )
+    {
+        for ( int i = 0; i < scores.length - 2; i++ )
+        {
+            if ( scores[i + 2] - scores[i] <= 2 )
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
