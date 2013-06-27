@@ -21,4 +21,15 @@ public class Ap1Test
         assertFalse( Ap1.scoresIncreasing( new int[] {1, 1, 2, 4, 3, 7} ) );
         assertTrue( Ap1.scoresIncreasing( new int[] {-5, 4, 11} ) );
     }
+
+    @Test
+    public void testScores100() throws Exception
+    {
+        assertTrue( Ap1.scores100( new int[] {100, 100} ) );
+        assertTrue( Ap1.scores100( new int[] {100, 100, 100} ) );
+        assertTrue( Ap1.scores100( new int[] {1, 100, 100} ) );
+        assertTrue( Ap1.scores100( new int[] {100, 1, 1, 100, 100} ) );
+        assertFalse( Ap1.scores100( new int[] {1, 100} ) );
+        assertFalse( Ap1.scores100( new int[] {100, 1, 100, 1, 100} ) );
+    }
 }
