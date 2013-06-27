@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 
 /**
  * Date: 21.06.13
- *
  * @author Sergey Kandalintsev
  */
 public class Ap1Test
@@ -14,22 +13,36 @@ public class Ap1Test
     @Test
     public void testScoresIncreasing() throws Exception
     {
-        assertTrue( Ap1.scoresIncreasing( new int[] {1, 3, 4} ) );
-        assertFalse( Ap1.scoresIncreasing( new int[] {1, 3, 2} ) );
-        assertTrue( Ap1.scoresIncreasing( new int[] {1, 1, 4} ) );
-        assertTrue( Ap1.scoresIncreasing( new int[] {1, 1, 2, 4, 4, 7} ) );
-        assertFalse( Ap1.scoresIncreasing( new int[] {1, 1, 2, 4, 3, 7} ) );
-        assertTrue( Ap1.scoresIncreasing( new int[] {-5, 4, 11} ) );
+        assertTrue( Ap1.scoresIncreasing( new int[]{ 1, 3, 4 } ) );
+        assertFalse( Ap1.scoresIncreasing( new int[]{ 1, 3, 2 } ) );
+        assertTrue( Ap1.scoresIncreasing( new int[]{ 1, 1, 4 } ) );
+        assertTrue( Ap1.scoresIncreasing( new int[]{ 1, 1, 2, 4, 4, 7 } ) );
+        assertFalse( Ap1.scoresIncreasing( new int[]{ 1, 1, 2, 4, 3, 7 } ) );
+        assertTrue( Ap1.scoresIncreasing( new int[]{ -5, 4, 11 } ) );
     }
 
     @Test
     public void testScores100() throws Exception
     {
-        assertTrue( Ap1.scores100( new int[] {100, 100} ) );
-        assertTrue( Ap1.scores100( new int[] {100, 100, 100} ) );
-        assertTrue( Ap1.scores100( new int[] {1, 100, 100} ) );
-        assertTrue( Ap1.scores100( new int[] {100, 1, 1, 100, 100} ) );
-        assertFalse( Ap1.scores100( new int[] {1, 100} ) );
-        assertFalse( Ap1.scores100( new int[] {100, 1, 100, 1, 100} ) );
+        assertTrue( Ap1.scores100( new int[]{ 100, 100 } ) );
+        assertTrue( Ap1.scores100( new int[]{ 100, 100, 100 } ) );
+        assertTrue( Ap1.scores100( new int[]{ 1, 100, 100 } ) );
+        assertTrue( Ap1.scores100( new int[]{ 100, 1, 1, 100, 100 } ) );
+        assertFalse( Ap1.scores100( new int[]{ 1, 100 } ) );
+        assertFalse( Ap1.scores100( new int[]{ 100, 1, 100, 1, 100 } ) );
+    }
+
+    @Test
+    public void testScoresClump() throws Exception
+    {
+        assertTrue( Ap1.scoresClump( new int[]{ 1, 2, 3 } ) );
+        assertTrue( Ap1.scoresClump( new int[]{ 1, 2, 5, 5, 6, 11, 12 } ) );
+        assertTrue( Ap1.scoresClump( new int[]{ 10, 1, 8, 1, 2, 3 } ) );
+        assertTrue( Ap1.scoresClump( new int[]{ 1, 2, 3, 18 } ) );
+        assertFalse( Ap1.scoresClump( new int[]{ } ) );
+        assertFalse( Ap1.scoresClump( new int[]{ 0 } ) );
+        assertFalse( Ap1.scoresClump( new int[]{ 0, 1 } ) );
+        assertFalse( Ap1.scoresClump( new int[]{ 0, 1, 18 } ) );
+        assertFalse( Ap1.scoresClump( new int[]{ 0, 1, 3, 5, 21, 22, 28 } ) );
     }
 }
