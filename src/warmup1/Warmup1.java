@@ -272,9 +272,9 @@ public class Warmup1
     /**
      * Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the % "mod" operator.
      * <ul>
-     * <li>or35(3) → true</li>
-     * <li>or35(10) → true</li>
-     * <li>or35(8) → false</li>
+     * <li>or35(3) --> true</li>
+     * <li>or35(10) --> true</li>
+     * <li>or35(8) --> false</li>
      * </ul>
      *
      * @param n non-negative number
@@ -291,9 +291,9 @@ public class Warmup1
      * Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back,
      * so "kitten" yields"kikittenki". If the string length is less than 2, use whatever chars are there.
      * <ul>
-     * <li>front22("kitten") → "kikittenki"</li>
-     * <li>front22("Ha") → "HaHaHa"</li>
-     * <li>front22("abc") → "ababcab"</li>
+     * <li>front22("kitten") --> "kikittenki"</li>
+     * <li>front22("Ha") --> "HaHaHa"</li>
+     * <li>front22("abc") --> "ababcab"</li>
      * </ul>
      *
      * @param str given string
@@ -310,9 +310,9 @@ public class Warmup1
     /**
      * Given a string, return true if the string starts with "hi" and false otherwise.
      * <ul>
-     * <li>startHi("hi there") → true</li>
-     * <li>startHi("hi") → true</li>
-     * <li>startHi("hello hi") → false</li>
+     * <li>startHi("hi there") --> true</li>
+     * <li>startHi("hi") --> true</li>
+     * <li>startHi("hello hi") --> false</li>
      * </ul>
      *
      * @param str given string
@@ -327,9 +327,9 @@ public class Warmup1
     /**
      * Given two temperatures, return true if one is less than 0 and the other is greater than 100.
      * <ul>
-     * <li>icyHot(120, -1) → true</li>
-     * <li>icyHot(-1, 120) → true</li>
-     * <li>icyHot(2, 120) → false</li>
+     * <li>icyHot(120, -1) --> true</li>
+     * <li>icyHot(-1, 120) --> true</li>
+     * <li>icyHot(2, 120) --> false</li>
      * </ul>
      *
      * @param temp1 temperature
