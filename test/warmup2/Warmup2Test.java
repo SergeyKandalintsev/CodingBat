@@ -127,4 +127,77 @@ public class Warmup2Test
         assertTrue( Warmup2.array123( new int[]{ 9, 8, 1, 2, 3, 4, 5, 6 } ) );
         assertTrue( Warmup2.array123( new int[]{ 6, 7, 1, 2, 3 } ) );
     }
+
+    @Test
+    public void testStringMatch() throws Exception
+    {
+        assertEquals( 1, Warmup2.stringMatch( "01", "01" ) );
+        assertEquals( 2, Warmup2.stringMatch( "012", "012" ) );
+        assertEquals( 2, Warmup2.stringMatch( "000", "000" ) );
+        assertEquals( 0, Warmup2.stringMatch( "01", "3201" ) );
+        assertEquals( 5, Warmup2.stringMatch( "012345", "012345" ) );
+        assertEquals( 0, Warmup2.stringMatch( "", "" ) );
+        assertEquals( 0, Warmup2.stringMatch( "01", "0" ) );
+        assertEquals( 0, Warmup2.stringMatch( "0123", "24" ) );
+        assertEquals( 2, Warmup2.stringMatch( "012345", "012" ) );
+    }
+
+    @Test
+    public void testStringX() throws Exception
+    {
+        assertEquals( "", Warmup2.stringX( "" ) );
+        assertEquals( "x", Warmup2.stringX( "x" ) );
+        assertEquals( "xx", Warmup2.stringX( "xx" ) );
+        assertEquals( "xx", Warmup2.stringX( "xxx" ) );
+        assertEquals( "xXx", Warmup2.stringX( "xXx" ) );
+        assertEquals( "0XXX1", Warmup2.stringX( "0XxXxXxx1" ) );
+        assertEquals( "x0XXX1x", Warmup2.stringX( "x0XxXxXxx1x" ) );
+    }
+
+    @Test
+    public void testAltPairs() throws Exception
+    {
+        assertEquals( "", Warmup2.altPairs( "" ) );
+        assertEquals( "0", Warmup2.altPairs( "0" ) );
+        assertEquals( "01", Warmup2.altPairs( "01" ) );
+        assertEquals( "01", Warmup2.altPairs( "012" ) );
+        assertEquals( "01", Warmup2.altPairs( "0123" ) );
+        assertEquals( "014", Warmup2.altPairs( "01234" ) );
+        assertEquals( "0145", Warmup2.altPairs( "012345" ) );
+        assertEquals( "0145", Warmup2.altPairs( "0123456" ) );
+        assertEquals( "0145", Warmup2.altPairs( "01234567" ) );
+        assertEquals( "01458", Warmup2.altPairs( "012345678" ) );
+    }
+
+    @Test
+    public void testStringYak() throws Exception
+    {
+        assertEquals( "", Warmup2.stringYak( "" ) );
+        assertEquals( "y", Warmup2.stringYak( "y" ) );
+        assertEquals( "ya", Warmup2.stringYak( "ya" ) );
+        assertEquals( "", Warmup2.stringYak( "yak" ) );
+        assertEquals( "", Warmup2.stringYak( "ybk" ) );
+        assertEquals( "aaabbb", Warmup2.stringYak( "aaayakbbb" ) );
+        assertEquals( "aaabbb", Warmup2.stringYak( "aaaybkbbb" ) );
+        assertEquals( "aaa", Warmup2.stringYak( "yakaaaybk" ) );
+    }
+
+    @Test
+    public void testarray667() throws Exception
+    {
+        assertEquals( 1, Warmup2.array667( new int[]{ 6, 6, 2 } ) );
+        assertEquals( 1, Warmup2.array667( new int[]{ 6, 6, 2, 6 } ) );
+        assertEquals( 1, Warmup2.array667( new int[]{ 6, 7, 2, 6 } ) );
+        assertEquals( 2, Warmup2.array667( new int[]{ 6, 6, 2, 6, 7 } ) );
+        assertEquals( 0, Warmup2.array667( new int[]{ 1, 6, 3 } ) );
+        assertEquals( 0, Warmup2.array667( new int[]{ 6, 1 } ) );
+        assertEquals( 0, Warmup2.array667( new int[]{ } ) );
+        assertEquals( 1, Warmup2.array667( new int[]{ 3, 6, 7, 6 } ) );
+        assertEquals( 2, Warmup2.array667( new int[]{ 3, 6, 6, 7 } ) );
+        assertEquals( 1, Warmup2.array667( new int[]{ 6, 3, 6, 6 } ) );
+        assertEquals( 2, Warmup2.array667( new int[]{ 6, 7, 6, 6 } ) );
+        assertEquals( 0, Warmup2.array667( new int[]{ 1, 2, 3, 5, 6 } ) );
+        assertEquals( 1, Warmup2.array667( new int[]{ 1, 2, 3, 6, 6 } ) );
+        assertEquals( 0, Warmup2.array667( new int[]{ 6 } ) );
+    }
 }
