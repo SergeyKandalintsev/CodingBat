@@ -200,4 +200,30 @@ public class Warmup2Test
         assertEquals( 1, Warmup2.array667( new int[]{ 1, 2, 3, 6, 6 } ) );
         assertEquals( 0, Warmup2.array667( new int[]{ 6 } ) );
     }
+
+    @Test
+    public void testNoTriples() throws Exception
+    {
+        assertTrue( Warmup2.noTriples( new int[]{ } ) );
+        assertTrue( Warmup2.noTriples( new int[]{ 0 } ) );
+        assertTrue( Warmup2.noTriples( new int[]{ 0, 0 } ) );
+        assertTrue( Warmup2.noTriples( new int[]{ 0, 0, 1 } ) );
+        assertTrue( Warmup2.noTriples( new int[]{ 0, 0, 1, 1, 0, 0, 1 } ) );
+        assertFalse( Warmup2.noTriples( new int[]{ 0, 0, 0 } ) );
+        assertFalse( Warmup2.noTriples( new int[]{ 0, 1, 1, 1, 0 } ) );
+        assertFalse( Warmup2.noTriples( new int[]{ 1, 1, 0, 0, 2, 2, 2, } ) );
+    }
+
+    @Test
+    public void testHas271() throws Exception
+    {
+        assertTrue( Warmup2.has271( new int[] {1, 2, 7, 1} ) );
+        assertFalse( Warmup2.has271( new int[] {1, 2, 8, 1} ) );
+        assertTrue( Warmup2.has271( new int[] {2, 7, 1} ) );
+        assertTrue( Warmup2.has271( new int[] {3, 8, 2} ) );
+        assertTrue( Warmup2.has271( new int[] {2, 7, 3} ) );
+        assertFalse( Warmup2.has271( new int[] {2, 7, 4} ) );
+        assertTrue( Warmup2.has271( new int[] {2, 7, -1} ) );
+
+    }
 }
