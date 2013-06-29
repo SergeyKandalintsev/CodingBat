@@ -383,4 +383,53 @@ public class Warmup2
 
         return count;
     }
+
+    /**
+     * Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the array. Return
+     * true if the array does not contain any triples.
+     * <ul>
+     * <li>noTriples({1, 1, 2, 2, 1}) --> true</li>
+     * <li>noTriples({1, 1, 2, 2, 2, 1}) --> false</li>
+     * <li>noTriples({1, 1, 1, 2, 2, 2, 1}) --> false</li>
+     * </ul>
+     * @param nums given array of ints
+     * @return <code>true</code> if the array does not contain any triples, <code>false</code> otherwise
+     */
+    public static boolean noTriples( int[] nums )
+    {
+        for ( int i = 0; i < nums.length - 2; i++ )
+        {
+            if ( nums[i] == nums[i + 1] && nums[i] == nums[i + 2] )
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Given an array of ints, return true if it contains a 2, 7, 1 pattern -- a value, followed by the value plus 5,
+     * followed by the value minus 1. Additionally the 271 counts even if the "1" differs by 2 or less from the
+     * correct value.
+     * <ul>
+     * <li>has271({1, 2, 7, 1}) --> true</li>
+     * <li>has271({1, 2, 8, 1}) --> false</li>
+     * <li>has271({2, 7, 1}) --> true</li>
+     * </ul>
+     * @param nums given array of ints
+     * @return boolean value according to exercise conditions
+     */
+    public static boolean has271( int[] nums )
+    {
+        for ( int i = 0; i < nums.length - 2; i++ )
+        {
+            if ( ( nums[i] + 5 == nums[i + 1] ) && Math.abs( nums[i + 2] - ( nums[i] - 1 ) ) <= 2 )
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
