@@ -55,7 +55,7 @@ public class String2
      * </ul>
      * @param str not null string
      * @return <code>true</code> if the string "cat" and "dog" appear the same number of times in the given string,
-     * <code>false</code> otherwise
+     *         <code>false</code> otherwise
      */
     public static boolean catDog( String str )
     {
@@ -87,7 +87,7 @@ public class String2
      * </ul>
      * @param str not null string
      * @return number of times that the string "coXe" (where X means any character) appears anywhere in
-     * the given string
+     *         the given string
      */
     public static int countCode( String str )
     {
@@ -119,7 +119,7 @@ public class String2
      * @param a string
      * @param b string
      * @return <code>true</code> if either of the strings appears at the very end of the other string (ignoring case
-     * difference), <code>false</code> otherwise
+     *         difference), <code>false</code> otherwise
      */
     public static boolean endOther( String a, String b )
     {
@@ -139,7 +139,7 @@ public class String2
      * </ul>
      * @param str string
      * @return <code>true</code> if the given string contains "xyz" not directly preceeded by a '.' symbol,
-     * <code>false</code> otherwise
+     *         <code>false</code> otherwise
      */
     public static boolean xyzThere( String str )
     {
@@ -157,5 +157,29 @@ public class String2
         }
 
         return result;
+    }
+
+    /**
+     * Return true if the given string contains a "bob" string, but where the middle 'o' char can be any char.
+     * <ul>
+     * <li>bobThere("abcbob") → true</li>
+     * <li>bobThere("b9b") → true</li>
+     * <li>bobThere("bac") → false</li>
+     * </ul>
+     * @param str given string
+     * @return <code>true</code> if the given string contains "bob", but where the middle 'o' char can be any char,
+     *         <code>false</code> otherwise
+     */
+    public static boolean bobThere( String str )
+    {
+        for ( int i = 0; i < str.length() - 2; i++ )
+        {
+            if ( str.charAt( i ) == 'b' && str.charAt( i + 2 ) == 'b' )
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
