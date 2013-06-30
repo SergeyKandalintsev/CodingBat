@@ -57,13 +57,43 @@ public class String2Test
     @Test
     public void testEndOther() throws Exception
     {
-
-
+        assertTrue( String2.endOther( "", "" ) );
+        assertTrue( String2.endOther( "", "1" ) );
+        assertTrue( String2.endOther( "1", "1" ) );
+        assertTrue( String2.endOther( "01", "1" ) );
+        assertTrue( String2.endOther( "012345", "345" ) );
+        assertFalse( String2.endOther( "012345", "3456" ) );
     }
 
     @Test
     public void testXyzThere() throws Exception
     {
-
+        assertTrue( String2.xyzThere( "abcxyz" ) );
+        assertTrue( String2.xyzThere( "xyz.abc" ) );
+        assertTrue( String2.xyzThere( "xyz" ) );
+        assertTrue( String2.xyzThere( "abc.xyzxyz" ) );
+        assertFalse( String2.xyzThere( "abc.xyz" ) );
+        assertFalse( String2.xyzThere( "abcxy" ) );
+        assertFalse( String2.xyzThere( "xy" ) );
+        assertFalse( String2.xyzThere( "" ) );
+        assertFalse( String2.xyzThere( ".xyz" ) );
+        assertFalse( String2.xyzThere( "1.xyz.xyz2.xyz" ) );
     }
+
+    @Test
+    public void testBobThere() throws Exception
+    {
+        assertTrue( String2.bobThere( "bob" ) );
+        assertTrue( String2.bobThere( "bxb" ) );
+        assertTrue( String2.bobThere( "123bob" ) );
+        assertTrue( String2.bobThere( "bob123" ) );
+        assertTrue( String2.bobThere( "123bob123" ) );
+        assertTrue( String2.bobThere( "123byb123" ) );
+        assertFalse( String2.bobThere( "" ) );
+        assertFalse( String2.bobThere( "b" ) );
+        assertFalse( String2.bobThere( "bo" ) );
+        assertFalse( String2.bobThere( "box" ) );
+        assertFalse( String2.bobThere( "xyzboxob" ) );
+    }
+
 }
