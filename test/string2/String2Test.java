@@ -95,5 +95,4 @@ public class String2Test
         assertFalse( String2.bobThere( "box" ) );
         assertFalse( String2.bobThere( "xyzboxob" ) );
     }
-
 }
