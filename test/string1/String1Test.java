@@ -37,4 +37,28 @@ public class String1Test
         assertEquals( "<<Yay>>", String1.makeOutWord( "<<>>", "Yay" ) );
         assertEquals( "[[word]]", String1.makeOutWord( "[[]]", "word" ) );
     }
+
+    @Test
+    public void testExtraEnd() throws Exception
+    {
+        assertEquals( "010101", String1.extraEnd( "01" ) );
+        assertEquals( "232323", String1.extraEnd( "0123" ) );
+    }
+
+    @Test
+    public void testFirstTwo() throws Exception
+    {
+        assertEquals( "", String1.firstTwo( "" ) );
+        assertEquals( "0", String1.firstTwo( "0" ) );
+        assertEquals( "01", String1.firstTwo( "01" ) );
+        assertEquals( "01", String1.firstTwo( "012" ) );
+    }
+
+    @Test
+    public void testFirstHalf() throws Exception
+    {
+        assertEquals( "", String1.firstHalf( "" ) );
+        assertEquals( "0", String1.firstHalf( "01" ) );
+        assertEquals( "01", String1.firstHalf( "0123" ) );
+    }
 }
