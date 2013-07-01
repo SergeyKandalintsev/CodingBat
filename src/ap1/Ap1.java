@@ -2,7 +2,6 @@ package ap1;
 
 /**
  * Date: 21.06.13
- *
  * @author Sergey Kandalintsev
  */
 public class Ap1
@@ -15,9 +14,7 @@ public class Ap1
      * <li>scoresIncreasing({1, 3, 2}) --> false</li>
      * <li>scoresIncreasing({1, 1, 4}) --> true</li>
      * </ul>
-     *
      * @param scores array of scores
-     *
      * @return <code>true</code> if each score is equal or greater than the one before. Otherwise returns
      *         <code>false</code>
      */
@@ -42,9 +39,7 @@ public class Ap1
      * <li>scores100({1, 100, 99, 100}) --> false</li>
      * <li>scores100({100, 1, 100, 100}) --> truetrue</li>
      * </ul>
-     *
      * @param scores array of scores, array length at least 2
-     *
      * @return <code>true</code> if there are scores of 100 next to each other in the array. Otherwise returns
      *         <code>false</code>
      */
@@ -69,9 +64,7 @@ public class Ap1
      * <li>scoresClump({3, 4, 6}) --> false</li>
      * <li>scoresClump({1, 3, 5, 5}) --> true</li>
      * </ul>
-     *
      * @param scores an array of scores sorted in increasing order
-     *
      * @return <code>true</code> if the array contains 3 adjacent scores that differ from each other by at most 2.
      *         Otherwise returns <code>false</code>
      */
@@ -101,9 +94,7 @@ public class Ap1
      * <li>scoresAverage({4, 4, 4, 2, 2, 2}) --> 4</li>
      * <li>scoresAverage({3, 4, 5, 1, 2, 3}) --> 4</li>
      * </ul>
-     *
      * @param scores array of scores (length at least 2)
-     *
      * @return int value according to exercise conditions
      */
     public static int scoresAverage( int[] scores )
@@ -131,10 +122,8 @@ public class Ap1
      * <li>wordsCount({"a", "bb", "b", "ccc"}, 3) --> 1</li>
      * <li>wordsCount({"a", "bb", "b", "ccc"}, 4) --> 0</li>
      * </ul>
-     *
      * @param words array of strings
      * @param len   given length
-     *
      * @return count of the number of strings with the given length
      */
     public static int wordsCount( String[] words, int len )
@@ -159,17 +148,15 @@ public class Ap1
      * <li>wordsFront({"a", "b", "c", "d"}, 2) --> {"a", "b"}</li>
      * <li>wordsFront({"a", "b", "c", "d"}, 3) --> {"a", "b", "c"}</li>
      * </ul>
-     *
-     * @param words
-     * @param n
-     *
-     * @return
+     * @param words array of strings
+     * @param n     number
+     * @return array containing the first N strings
      */
     public static String[] wordsFront( String[] words, int n )
     {
         String[] result = new String[n];
 
-        for (int i = 0; i < n; i++)
+        for ( int i = 0; i < n; i++ )
         {
             result[i] = words[i];
         }
