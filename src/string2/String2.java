@@ -162,9 +162,9 @@ public class String2
     /**
      * Return true if the given string contains a "bob" string, but where the middle 'o' char can be any char.
      * <ul>
-     * <li>bobThere("abcbob") → true</li>
-     * <li>bobThere("b9b") → true</li>
-     * <li>bobThere("bac") → false</li>
+     * <li>bobThere("abcbob") --> true</li>
+     * <li>bobThere("b9b") --> true</li>
+     * <li>bobThere("bac") --> false</li>
      * </ul>
      * @param str given string
      * @return <code>true</code> if the given string contains "bob", but where the middle 'o' char can be any char,
