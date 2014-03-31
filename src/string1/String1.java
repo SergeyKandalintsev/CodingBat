@@ -198,6 +198,10 @@ public class String1 {
 
         return front.equals(end);
     }
+
+    public static String minCat(String a, String b) {
+        return null;
+    }
 }
 
 
