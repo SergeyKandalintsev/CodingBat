@@ -8,8 +8,7 @@ package string1;
  *
  * @author Sergey Kandalintsev
  */
-public class String1
-{
+public class String1 {
     /**
      * Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!".
      * <ul>
@@ -18,12 +17,12 @@ public class String1
      * <li>helloName("X") --> "Hello X!"</li>
      * </ul>
      *
-     * @param name given string
+     * @param name
+     *         given string
      *
      * @return a greeting of the form "name Bob!"
      */
-    public static String helloName( String name )
-    {
+    public static String helloName(String name) {
         return "Hello " + name + "!";
     }
 
@@ -36,13 +35,14 @@ public class String1
      * <li>makeAbba("What", "Up") --> "WhatUpUpWhat"</li>
      * </ul>
      *
-     * @param a given string
-     * @param b given string
+     * @param a
+     *         given string
+     * @param b
+     *         given string
      *
      * @return the result of putting strings together in the order abba
      */
-    public static String makeAbba( String a, String b )
-    {
+    public static String makeAbba(String a, String b) {
         return a + b + b + a;
     }
 
@@ -56,13 +56,14 @@ public class String1
      * <li>makeTags("cite", "Yay") --> "<cite>Yay</cite>"</li>
      * </ul>
      *
-     * @param tag  given tag string
-     * @param word given word string
+     * @param tag
+     *         given tag string
+     * @param word
+     *         given word string
      *
      * @return the HTML string with tags around the word
      */
-    public static String makeTags( String tag, String word )
-    {
+    public static String makeTags(String tag, String word) {
         return "<" + tag + ">" + word + "</" + tag + ">";
     }
 
@@ -76,14 +77,15 @@ public class String1
      * <li>makeOutWord("[[]]", "word") --> "[[word]]"</li>
      * </ul>
      *
-     * @param out  "out" string length 4
-     * @param word a word
+     * @param out
+     *         "out" string length 4
+     * @param word
+     *         a word
      *
      * @return string where the word is in the middle of the out string
      */
-    public static String makeOutWord( String out, String word )
-    {
-        return out.substring( 0, 2 ) + word + out.substring( 2, 4 );
+    public static String makeOutWord(String out, String word) {
+        return out.substring(0, 2) + word + out.substring(2, 4);
     }
 
     /**
@@ -95,13 +97,13 @@ public class String1
      * <li>extraEnd("Hi") --> "HiHiHi"</li>
      * </ul>
      *
-     * @param str given string, length at least 2.
+     * @param str
+     *         given string, length at least 2.
      *
      * @return a new string made of 3 copies of the last 2 chars of the original string
      */
-    public static String extraEnd( String str )
-    {
-        String result = str.substring( str.length() - 2 );
+    public static String extraEnd(String str) {
+        String result = str.substring(str.length() - 2);
 
         return result + result + result;
     }
@@ -116,13 +118,13 @@ public class String1
      * <li>firstTwo("ab") --> "ab"</li>
      * </ul>
      *
-     * @param str given string
+     * @param str
+     *         given string
      *
      * @return String value according to exercise conditions
      */
-    public static String firstTwo( String str )
-    {
-        return str.length() > 2 ? str.substring( 0, 2 ) : str;
+    public static String firstTwo(String str) {
+        return str.length() > 2 ? str.substring(0, 2) : str;
     }
 
     /**
@@ -133,12 +135,104 @@ public class String1
      * <li>firstTwo("ab") --> "ab"</li>
      * </ul>
      *
-     * @param str given string of even length
+     * @param str
+     *         given string of even length
      *
      * @return first half of the string
      */
-    public static String firstHalf( String str )
-    {
-        return str.substring( 0, str.length() / 2 );
+    public static String firstHalf(String str) {
+        return str.substring(0, str.length() / 2);
+    }
+
+    // -----------------------------------------------------------------------------------------
+
+    /**
+     * Given a string, if the string begins with "red" or "blue" return that color string, otherwise return the empty
+     * string.
+     * <ul>
+     * <li>seeColor("redxx") → "red"</li>
+     * <li>seeColor("xxred") → ""</li>
+     * <li>seeColor("blueTimes") → "blue"</li>
+     * </ul>
+     *
+     * @param str
+     *         given string
+     *
+     * @return color ("red" or "blue") or empty string
+     *
+     * @throws NullPointerException
+     *         If str is null
+     */
+    public static String seeColor(String str) {
+        if (str.startsWith("red")) {
+            return "red";
+        } else if (str.startsWith("blue")) {
+            return "blue";
+        } else {
+            return "";
+        }
+    }
+
+    /**
+     * Given a string, return true if the first 2 chars in the string also appear at the end of the string, such as
+     * with "edited".
+     * <ul>
+     * <li>frontAgain("edited") → true</li>
+     * <li>frontAgain("edit") → false</li>
+     * <li>frontAgain("ed") → true</li>
+     * </ul>
+     *
+     * @param str
+     *         given string
+     *
+     * @return <code>true</code> if the first 2 chars in the string also appear at the end of the string. Otherwise
+     * returns <code>false</code>
+     */
+    public static boolean frontAgain(String str) {
+        if (str == null || str.length() < 2) {
+            return false;
+        }
+
+        String front = str.substring(0, 2);
+        String end = str.substring(str.length() - 2);
+
+        return front.equals(end);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
